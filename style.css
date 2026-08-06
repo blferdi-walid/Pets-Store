@@ -1,0 +1,289 @@
+:root {
+  --text-color: #000958;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fffaf5;
+  font-family: poppins;
+}
+.Body-Container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+.contact {
+  width: 100%;
+  height: 100%;
+}
+header {
+  width: 80%;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--text-color);
+}
+.Nav-Left {
+  display: flex;
+  flex-direction: row;
+}
+.Nav-Left .logo a {
+  margin-right: 40px;
+  font-size: 30px;
+  color: var(--text-color);
+}
+.Nav-Left ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Nav-Left ul a,
+.Nav-Right a {
+  text-decoration: none;
+  margin: 10px 15px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.Nav-Right a {
+  font-size: 22px;
+}
+
+.content-Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+.content-Contact .parent {
+  display: grid;
+  width: 800px;
+  height: 500px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.content-Contact .div1 {
+  background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.content-Contact .div1 h3 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+.content-Contact .div1,
+.content-Contact .div3 {
+  padding: 40px;
+}
+.content-Contact .div1 > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.Address {
+  grid-row-start: 2;
+}
+
+.Social {
+  grid-row-start: 2;
+}
+.SocialLinks {
+  display: flex;
+}
+.email span a {
+  text-decoration: underline;
+}
+.content-Contact div > div > div {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+.content-Contact div > div > div span:nth-child(1) {
+  font-size: bold;
+}
+.content-Contact div > div > div span:nth-child(1) > i {
+  transform: rotate(270deg);
+  margin-right: 10px;
+  margin-bottom: 7px;
+}
+.content-Contact .div2 {
+  background-color: red;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 8;
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content-Contact .div3 {
+  background-color: var(--text-color);
+  grid-row: span 1 / span 1;
+  grid-column-start: 5;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 8;
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*footer*/
+
+.footer {
+  background-color: #fde7cb;
+  width: 100%;
+  height: 300px;
+}
+.footer .Footer-Container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.footer .Footer-Container .footer-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 60px 0;
+}
+.footer .Footer-Container .footer-content div:nth-child(1) i {
+  font-size: 40px;
+}
+.footer .Footer-Container .footer-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer .Footer-Container .footer-content div h4 {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+.footer .Footer-Container .footer-content div a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+}
+.footer .Footer-Container .footer-content div:last-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.footer .Footer-Container .footer-content div:last-child  div div{
+    display: flex;
+    flex-direction: row;
+}
+.footer .Footer-Container .footer-content div:last-child >  div i:last-child {
+font-size: 40px;
+color: var(--text-color);
+margin-right: 10px;
+}
+.footer .Footer-Container .footer-content div:last-child >  div h4{
+  left: 0;
+}
+.footer hr {
+  border: 1px solid var(--text-color);
+}
+
+.copyrightFoot {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+
+
+.div3  h3 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+.div3  form{
+  display: flex;
+  flex-direction: column;
+    gap: 20px;
+
+  
+}
+.div3  form label{
+  color: white;
+  font-size: 16px;
+
+}
+.div3  form  > div:first-child{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.div3  form  > div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+
+.div3  form   input{
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #293173;
+
+}
+.div3  form   textarea{
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #293173;
+  padding: 10px;
+  color: #676873;
+}
+.div3  form  button{
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 20px;
+  background-color: #FF5B2E;
+  color: white;
+}
