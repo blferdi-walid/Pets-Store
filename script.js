@@ -1,3 +1,87 @@
+const categoriesItemDB = [
+  {
+    id: 1,
+    Name: "dogs",
+    img: "./images/dogs.png",
+    category: "animals",
+  },
+  {
+    id: 2,
+    Name: "cats",
+    img: "./images/cat.png",
+    category: "animals",
+  },
+  {
+    id: 3,
+    Name: "fish",
+    img: "./images/fish.png",
+    category: "animals",
+  },
+  {
+    id: 4,
+    Name: "birds",
+    img: "./images/bird.png",
+    category: "animals",
+  },
+  {
+    id: 5,
+    Name: "smal pets",
+    img: "./images/smallPet.png",
+    category: "animals",
+  },
+  {
+    id: 6,
+    Name: "reptiles",
+    img: "./images/reptiles.png",
+    category: "animals",
+  },
+  {
+    id: 7,
+    Name: "reptiles",
+    img: "./images/reptiles.png",
+    category: "food",
+  },
+];
+
+const blogs = [
+  {
+    id: 1,
+    title: "10 Things Every New Dog Owner Should Know",
+    category: "Dogs",
+    author: "Sarah Johnson",
+    date: "2026-08-01",
+    image: "./images/dogs.png",
+    summary:
+      "From choosing the right food to setting up a training routine, here's everything you need to know before bringing home your first puppy.",
+    content:
+      "Bringing a new dog into your home is exciting, but it also comes with responsibility. ",
+  },
+  {
+    id: 2,
+    title: "Understanding Your Cat's Body Language",
+    category: "Cats",
+    author: "Michael Lee",
+    date: "2026-08-03",
+    image: "./images/cat.png",
+    summary:
+      "Cats communicate a lot through posture, tail movement, and ear position. Learn how to read the signs to better understand your feline friend.",
+    content:
+      "Unlike dogs, cats communicate subtly. A slow blink is a sign of trust and affection, while a puffed-up ",
+  },
+  {
+    id: 3,
+    title: "A Beginner's Guide to Keeping Reptiles as Pets",
+    category: "Reptiles",
+    author: "Emma Torres",
+    date: "2026-08-05",
+    image: "./images/reptiles.png",
+    summary:
+      "Reptiles make fascinating low-maintenance pets, but they have very specific habitat and temperature needs. Here's what beginners should know.",
+    content:
+      "Reptiles like bearded dragons, geckos, and turtles require carefully controlled environments to thrive.",
+  },
+];
+
 const NavLinks = document.querySelectorAll(".Nav-Links-Left a");
 const headerId = document.querySelector("#header");
 NavLinks.forEach((link) => {
@@ -31,7 +115,7 @@ headerId.innerHTML = header;
 // end import header
 
 // start import footer
-const footerId = document.querySelector("#footer");
+const footerId = document.querySelector(".footer");
 
 const footer = `<div class="footer">
         <div class="Footer-Container">
@@ -74,3 +158,46 @@ const footer = `<div class="footer">
       </div>`;
 footerId.innerHTML = footer;
 // end import footer
+
+// statr categories section
+
+const CatitemsFilter = document.querySelector(".CatitemsFilter");
+
+const catFiltred = categoriesItemDB.filter((Item) => {
+  return Item.category === "animals";
+});
+
+catFiltred.map((Item) => {
+  const cartItem = document.createElement("div");
+  cartItem.classList.add("catItem");
+  cartItem.innerHTML = `<div class="catItem">
+              <h3>${Item.Name}</h3>
+              <img src="${Item.img}" alt="">
+            </div>`;
+
+  CatitemsFilter.appendChild(cartItem);
+});
+
+// start blogs
+const blogArtic = document.querySelector(".blogArtic");
+
+blogs.map((Item) => {
+  const blogsItem = document.createElement("div");
+  blogsItem.classList.add("blogsItem");
+  blogsItem.innerHTML = `
+        <div class="blogsItem">
+          <img src="${Item.image}" alt="">
+          <div class="blogItem_content">
+            <h3>${Item.title}</h3>
+            <p>${Item.content}</p>
+            <div class="authur">
+              <img src="${Item.image}" alt="">
+              <span>Dr. ${Item.author}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      blogArtic.appendChild(blogsItem)
+});
+
+// end blogs
