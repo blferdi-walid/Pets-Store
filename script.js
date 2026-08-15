@@ -197,7 +197,37 @@ blogs.map((Item) => {
           </div>
         </div>
       `;
-      blogArtic.appendChild(blogsItem)
+  blogArtic.appendChild(blogsItem);
 });
 
 // end blogs
+
+// start flach Countdon
+function formatTime(ms) {
+  const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(
+    2,
+    "0",
+  );
+  const seconds = String(totalSeconds % 60).padStart(2, "0");
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+function timer(duration) {
+  const targetTime = Date.now() + duration * 1000;
+
+  const interval = setInterval(() => {
+    const elapsedTime = targetTime - Date.now();
+    if (elapsedTime > 0) {
+      document.querySelector(".timer").textContent = formatTime(elapsedTime);
+    } else {
+      clearInterval(interval);
+      document.querySelector(".timer").textContent = "00:00:00";
+      console.log("Countdown finished!");
+    }
+  }, 1000); // 1 update per second is fine now, no decimals to show
+}
+
+timer(duration);
+// end flach Countdon
