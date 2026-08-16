@@ -2,12 +2,18 @@
   --text-color: #000958;
   --second--primary-backgr: rgb(255, 240, 225);
   --back-color-btn-search: rgb(255, 91, 46);
+  --text-color-price--main: rgb(255, 91, 46);
   --back-color-cover: rgb(237, 181, 7);
+  --box-shadow--box:
+    0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 20px 0px rgba(0, 0, 0, 0.1);
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+button {
+  cursor: pointer;
 }
 body {
   width: 100%;
@@ -56,6 +62,14 @@ header {
 
 .Nav-Right a {
   font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+  }
 }
 /* start home page style */
 #home {
@@ -174,6 +188,7 @@ section > h3 {
   padding: 20px 0px;
   display: flex;
   flex-direction: column;
+  gap: 120px;
 }
 .CatitemsFilter {
   width: 100%;
@@ -191,6 +206,11 @@ section > h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.categoriesSection .catItem:hover {
+  box-shadow: var(--box-shadow--box);
 }
 .categoriesSection .catItem img {
   width: 100%;
@@ -198,8 +218,6 @@ section > h3 {
   object-fit: cover;
 }
 .categoriesSection .catItem h3 {
-  width: 100%;
-  height: 30px;
   text-align: center;
   padding-top: 20px;
 }
@@ -207,58 +225,97 @@ section > h3 {
 /* start Homeproduct section  */
 .HomeProduct {
   width: 100%;
-  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(11, 1fr);
-  gap: 24px;
-  margin-top: 100px;
+  grid-template-areas:
+    "special trending trending "
+    "special trending trending "
+    "special favorite favorite";
+  row-gap: 24px;
+  column-gap: 60px;
+  align-content: start;
 }
+@media (max-width: 768px) {
+  .HomeProduct {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "special"
+      "trending"
+      "favorite";
+    margin-top: 40px;
+  }
+}
+
 .HomeProduct .SpecialOffers {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 12;
+  grid-area: special;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .HomeProduct .trendingProduct {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 8;
-  background-color: #616594;
+  grid-area: trending;
 }
-.HomeProduct .favoriteCategories {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 8;
-  grid-row-end: 12;
-  background-color: #000958;
-}
-.SpecialOffers {
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: repeat(11, 1fr);
-}
+
 .SpecialOffersHead {
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-.SpecialOffers .SpecialItems {
-  grid-row-start: 2;
-  grid-row-end: 10;
   width: 100%;
-  height: 100%;
-  gap: 20px;
+}
+
+.SpecialOffers .SpecialItems {
+  width: 100%;
+  gap: 30px;
   display: flex;
   flex-direction: column;
 }
 
 .SpecialOffers .adsFlashSale {
-  grid-row-start: 10;
-  grid-row-end: 12;
-  background-color: #676873;
+  background-color: var(--text-color);
+  width: 100%;
+  max-width: 305;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow--box);
 }
+.SpecialOffers .adsFlashSale h4 {
+  color: rgb(255, 200, 23);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.SpecialOffers .adsFlashSale > span {
+  color: #939497;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.SpecialOffers .adsFlashSale .timer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.SpecialOffers .adsFlashSale .timer div {
+  width: 40px;
+  height: 50px;
+  display: flex;
+  background-color: white;
+  color: var(--text-color-price--main);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+}
+.SpecialOffers .adsFlashSale .timer span {
+  color: white;
+  font-size: 1.8rem;
+}
+
 .SpecialOffersHead h3,
 .favoriteCategoriesHead h3,
 .trendingProductHead h3 {
@@ -274,6 +331,7 @@ section > h3 {
   width: 100%;
   height: 50px;
   color: var(--text-color);
+  box-shadow: var(--box-shadow--box);
 }
 .SpecialOffersHead h3 i,
 .favoriteCategoriesHead h3 i,
@@ -282,7 +340,7 @@ section > h3 {
   margin-right: 30px;
 }
 
-.SpecialOffers .SpecialItems .Special_item {
+.SpecialOffers .SpecialItems div .Special_item {
   width: 100%;
   height: 305px;
   display: flex;
@@ -297,6 +355,7 @@ section > h3 {
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .SpecialItems .Special_item .Special_item_head {
   width: 100%;
   text-align: center;
@@ -314,13 +373,15 @@ section > h3 {
 .Special_item_Img {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+  overflow: hidden; /* only this wrapper clips the image */
+
   position: relative;
 }
 .img-circle {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  overflow: hidden; /* only this wrapper clips the image */
   background-color: var(--back-color-cover);
 }
 .SpecialItems .Special_item .Special_item_Img img {
@@ -339,19 +400,16 @@ section > h3 {
   color: #000958;
   font-size: 10px;
   font-weight: 600;
-  
 }
-.SpecialItems .Special_item .Special_item_Img .discountpop  span{
-
+.SpecialItems .Special_item .Special_item_Img .discountpop span {
   font-size: 14px;
   width: 100%;
   height: 100%;
- color: white;
- display: flex;
- justify-content: center;
- align-items: center;
- text-align: center;
-  
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .SpecialItems .Special_item button {
@@ -364,6 +422,201 @@ section > h3 {
   border: none;
 }
 /* end Homeproduct section  */
+
+/* Start trending Product */
+
+.trendingProduct .TrandingItemsContainer {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.trendingProduct .TrandingItemsContainer > .trandingItems {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow--box);
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trendingProduct .TrandingItemsContainer > .trandingItems .trandingItemIMG {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border: none;
+}
+.trendingProduct .TrandingItemsContainer > .trandingItems .trandingItemIMG img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.trendingProduct .TrandingItemsContainer > .trandingItems .trandingItemContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  height: 100%;
+  padding: 10px;
+}
+
+.trendingProduct
+  .TrandingItemsContainer
+  > .trandingItems
+  .trandingItemContent
+  .trandingItemContent-head {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+.trendingProduct
+  .TrandingItemsContainer
+  > .trandingItems
+  .trandingItemContent
+  h2 {
+  height: 18px;
+  color: rgb(127, 132, 171);
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+  letter-spacing: 0px;
+  white-space: pre-line;
+  word-break: break-word;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+.trendingProduct
+  .TrandingItemsContainer
+  > .trandingItems
+  .trandingItemContent
+  i {
+  width: 10%;
+  color: rgb(127, 132, 171);
+}
+
+.trendingProduct
+  .TrandingItemsContainer
+  > .trandingItems
+  .trandingItemContent
+  .textPrice {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.trendingProduct
+  .TrandingItemsContainer
+  > .trandingItems
+  .trandingItemContent
+  .textPrice
+  span:first-child {
+  color: var(--text-color-price--main);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.trendingProduct
+  .TrandingItemsContainer
+  > .trandingItems
+  .trandingItemContent
+  .textPrice
+  span:last-child {
+  color: rgb(127, 132, 171);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* End trending Product */
+
+/* Start favorite section  */
+
+.favoriteCategories {
+  grid-area: favorite;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.favoriteCategories .favoriteCatContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+.favoriteItem {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+.favoriteItem::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.5;
+  z-index: 2;
+}
+.favoriteItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center; /* shifts crop to show more of the right side */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.favoriteItem div {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.favoriteItem div h4 {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.favoriteItem div p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.favoriteItem div button {
+  padding: 20px 40px;
+  border: none;
+  border-radius: 60px;
+  background-color: var(--back-color-btn-search);
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: var(--box-shadow--box);
+  transition: all 0.3s ease-in;
+}
+.favoriteItem div button:hover {
+  background-color: #ff9679;
+  color: #000958;
+}
+/* end favorite  section  */
+
 /* end categories section  */
 
 /* strat contact secttion  */
@@ -478,7 +731,8 @@ section > h3 {
 .footer {
   background-color: #fde7cb;
   width: 100%;
-  height: 300px;
+  min-height: 300px;
+  margin-top: 50px;
 }
 .footer .Footer-Container {
   width: 80%;
@@ -487,9 +741,8 @@ section > h3 {
 }
 .footer .Footer-Container .footer-content {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
   padding: 60px 0;
 }
 .footer .Footer-Container .footer-content div:nth-child(1) i {

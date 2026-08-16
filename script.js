@@ -1,45 +1,65 @@
 const categoriesItemDB = [
   {
     id: 1,
-    Name: "dogs",
+    name: "dogs",
     img: "./images/dogs.png",
     category: "animals",
+    Dr: "Dogg",
   },
   {
     id: 2,
-    Name: "cats",
+    name: "cats",
     img: "./images/cat.png",
     category: "animals",
   },
   {
     id: 3,
-    Name: "fish",
+    name: "fish",
     img: "./images/fish.png",
     category: "animals",
   },
   {
     id: 4,
-    Name: "birds",
+    name: "birds",
     img: "./images/bird.png",
     category: "animals",
   },
   {
     id: 5,
-    Name: "smal pets",
+    name: "smal pets",
     img: "./images/smallPet.png",
     category: "animals",
   },
   {
     id: 6,
-    Name: "reptiles",
+    name: "reptiles",
     img: "./images/reptiles.png",
     category: "animals",
   },
   {
     id: 7,
-    Name: "reptiles",
+    name: "reptiles",
     img: "./images/reptiles.png",
     category: "food",
+  },
+];
+
+const SpecialOffersDB_Treats = [
+  {
+    id: 1,
+    name: "dogs",
+    img: "./images/dogs.png",
+    category: "animals",
+    Dr: "Dr. Dogg",
+  },
+];
+const SpecialOffersDB_NewBrands = [
+  {
+    id: 2,
+    name: "cats",
+    img: "./images/cat.png",
+    category: "animals",
+    Dr: "Meet Mr.whiskerr",
   },
 ];
 
@@ -171,12 +191,77 @@ catFiltred.map((Item) => {
   const cartItem = document.createElement("div");
   cartItem.classList.add("catItem");
   cartItem.innerHTML = `<div class="catItem">
-              <h3>${Item.Name}</h3>
+              <h3>${Item.name}</h3>
               <img src="${Item.img}" alt="">
             </div>`;
 
   CatitemsFilter.appendChild(cartItem);
 });
+
+// start special Offer
+
+const specialItemstreats = document.querySelector(".treats");
+const specialItemsNewBrands = document.querySelector(
+  ".SpecialItems .NewBrands",
+);
+
+SpecialOffersDB_Treats.map((item) => {
+  const specialOffer = document.createElement("div");
+  specialOffer.classList.add("Special_item");
+  specialOffer.innerHTML = `
+                  <div class="Special_item_head">
+
+                    <h3>Dog Treats</h3>
+
+                    <span>${item.Dr}</span>
+                  </div>
+                  <div class="Special_item_Img">
+                    <img src="${item.img}" alt="">
+                  </div>
+                  <button>Shop Now</button>
+                
+                `;
+
+  specialOffer.style.backgroundColor = "rgb(231, 246, 252)";
+
+  specialOffer.querySelector(".Special_item_Img img").style.backgroundColor =
+    "var(--back-color-cover";
+
+  specialItemstreats.appendChild(specialOffer);
+});
+
+
+SpecialOffersDB_NewBrands.map((item) => {
+  const specialOffer = document.createElement("div");
+  specialOffer.classList.add("Special_item");
+  specialOffer.innerHTML = `
+                  <div class="Special_item_head">
+
+                    <h3>New Brand in!</h3>
+
+                    <span>${item.Dr}</span>
+                  </div>
+                  <div class="Special_item_Img">
+                    <img src="${item.img}" alt="">
+                  </div>
+                  <button>Shop Now</button>
+                
+                `;
+
+  specialOffer.style.backgroundColor = "rgb(249, 231, 252)";
+  specialOffer.querySelector(".Special_item_Img img").style.backgroundColor =
+    "rgb(0, 118, 198)";
+  specialOffer.querySelector("button").style.backgroundColor =
+    "rgb(195, 83, 214)";
+
+  specialItemsNewBrands.appendChild(specialOffer);
+});
+
+// } else if (item.name === "cats") {
+//
+
+// }
+// end special Offer
 
 // start blogs
 const blogArtic = document.querySelector(".blogArtic");
@@ -229,5 +314,4 @@ function timer(duration) {
   }, 1000); // 1 update per second is fine now, no decimals to show
 }
 
-timer(duration);
 // end flach Countdon
