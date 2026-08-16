@@ -108,27 +108,29 @@ NavLinks.forEach((link) => {
   link.textContent = link.textContent.toUpperCase();
 });
 // start import header
-const header = `<header>
-        <div class="Nav-Left">
-          <span class="logo">
-            <a href=""><i class="fa-solid fa-paw"></i></a>
-          </span>
-          <ul class="Nav-Links-Left">
+const header = `
+      <div class="Nav-Left">
+        <span class="logo">
+          <a href=""><i class="fa-solid fa-paw"></i></a>
+        </span>
+      </div>
+      <div class="Nav-Right">
+        <div class="Nav-Right-Links" >
+          <ul >
             <a href="">Home</a>
             <a href="">Categories</a>
             <a href="">Blog</a>
             <a href="">Contact</a>
           </ul>
-        </div>
-
-        <div class="Nav-Right">
-          <ul class="Nav-links-Right">
+          <ul >
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
             <a href=""><i class="fa-solid fa-cart-arrow-down"></i></a>
             <a href=""><i class="fa-solid fa-user"></i></a>
           </ul>
         </div>
-      </header>`;
+      </div>
+      <i id="menuIcon" class="fa-solid fa-bars"></i>
+    </header>`;
 
 headerId.innerHTML = header;
 
@@ -230,7 +232,6 @@ SpecialOffersDB_Treats.map((item) => {
   specialItemstreats.appendChild(specialOffer);
 });
 
-
 SpecialOffersDB_NewBrands.map((item) => {
   const specialOffer = document.createElement("div");
   specialOffer.classList.add("Special_item");
@@ -315,3 +316,13 @@ function timer(duration) {
 }
 
 // end flach Countdon
+
+//start respancive header
+
+const menuIcon = document.querySelector("#menuIcon"); 
+const NavRight = document.querySelector(".Nav-Right")
+menuIcon.addEventListener("click", function () {
+  NavRight.classList.toggle("active");
+});
+
+// ENdrespancive header

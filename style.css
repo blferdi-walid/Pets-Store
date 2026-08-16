@@ -37,22 +37,39 @@ header {
   align-items: center;
   border-bottom: 2px solid var(--text-color);
 }
-.Nav-Left {
-  display: flex;
-  flex-direction: row;
+#menuIcon {
+  display: none;
+  cursor: pointer;
 }
 .Nav-Left .logo a {
   margin-right: 40px;
   font-size: 30px;
   color: var(--text-color);
 }
-.Nav-Left ul {
+.Nav-Right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  border-radius: 0px 0 20px 20px;
+  transition: all 0.3s ease;
+}
+.Nav-Right.active {
+  display: block;
+}
+.Nav-Right > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.Nav-Right ul:first-child {
   list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
 }
-.Nav-Left ul a,
+.Nav-Right ul a,
 .Nav-Right a {
   text-decoration: none;
   margin: 10px 15px;
@@ -64,13 +81,58 @@ header {
   font-size: 22px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 728px) {
   header {
     width: 100%;
     display: flex;
-    flex-direction:column;
+    position: relative;
+  }
+  #menuIcon {
+    display: block;
+  }
+  .Nav-Right {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: auto;
+    top: 70px;
+    right: 0;
+    background-color: var(--text-color);
+    z-index: 100;
+
+    border-radius: 0px 0 20px 20px;
+    transition: all 0.3s ease;
+  }
+  .Nav-Right > div {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+  .Nav-Right-Links > ul:first-child,
+  ul:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .Nav-Right-Links ul a {
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+  .Nav-Right-Links ul a:hover {
+    background-color: #616594;
   }
 }
+
 /* start home page style */
 #home {
   width: 100%;
@@ -207,7 +269,7 @@ section > h3 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease;
 }
 .categoriesSection .catItem:hover {
   box-shadow: var(--box-shadow--box);
@@ -270,7 +332,7 @@ section > h3 {
 .SpecialOffers .adsFlashSale {
   background-color: var(--text-color);
   width: 100%;
-  max-width: 305;
+  /* max-width: 305px; */
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -439,7 +501,6 @@ section > h3 {
   box-shadow: var(--box-shadow--box);
   display: flex;
   flex-direction: column;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -558,7 +619,6 @@ section > h3 {
   align-items: center;
   flex-direction: column;
   position: relative;
-  z-index: 100;
   overflow: hidden;
 }
 .favoriteItem::before {
@@ -609,7 +669,7 @@ section > h3 {
   color: white;
   font-size: 1.2rem;
   box-shadow: var(--box-shadow--box);
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease;
 }
 .favoriteItem div button:hover {
   background-color: #ff9679;
