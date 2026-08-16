@@ -117,10 +117,10 @@ const header = `
       <div class="Nav-Right">
         <div class="Nav-Right-Links" >
           <ul >
-            <a href="">Home</a>
+            <a href="index.html">Home</a>
             <a href="">Categories</a>
             <a href="">Blog</a>
-            <a href="">Contact</a>
+            <a href="Contact.html">Contact</a>
           </ul>
           <ul >
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
