@@ -227,6 +227,7 @@ header {
   background-color: var(--back-color-btn-search);
   color: white;
   font-size: 20px;
+  box-shadow: var(--box-shadow--box);
 }
 
 /* end home page style */
