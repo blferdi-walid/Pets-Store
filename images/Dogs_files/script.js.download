@@ -103,337 +103,6 @@ const blogs = [
   },
 ];
 
-const productsDB = [
-  // ===== Animals (your original 20, unchanged) =====
-  {
-    id: 1,
-    title: "Friendly golden dog",
-    name: "Rex",
-    animal: "dogs",
-    img: "./images/dogs.png",
-    price: 149.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 2,
-    title: "Playful young puppy",
-    name: "Max",
-    animal: "dogs",
-    img: "./images/dogs-1.jpg",
-    price: 199.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 3,
-    title: "Smart family dog",
-    name: "Buddy",
-    animal: "dogs",
-    img: "./images/dogs.png",
-    price: 179.99,
-    category: "animals",
-    liked: true,
-  },
-  {
-    id: 4,
-    title: "Loyal guard dog",
-    name: "Rocky",
-    animal: "dogs",
-    img: "./images/dogs-1.jpg",
-    price: 219.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 5,
-    title: "Soft fluffy cat",
-    name: "Luna",
-    animal: "cats",
-    img: "./images/cat.png",
-    price: 129.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 6,
-    title: "Calm indoor cat",
-    name: "Milo",
-    animal: "cats",
-    img: "./images/cat.png",
-    price: 119.99,
-    category: "animals",
-    liked: true,
-  },
-  {
-    id: 7,
-    title: "Curious little kitten",
-    name: "Simba",
-    animal: "cats",
-    img: "./images/cat.png",
-    price: 139.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 8,
-    title: "Colorful tropical fish",
-    name: "Nemo",
-    animal: "fish",
-    img: "./images/fish.png",
-    price: 9.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 9,
-    title: "Golden aquarium fish",
-    name: "Goldy",
-    animal: "fish",
-    img: "./images/fish.png",
-    price: 7.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 10,
-    title: "Small blue fish",
-    name: "Dory",
-    animal: "fish",
-    img: "./images/fish.png",
-    price: 12.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 11,
-    title: "Singing canary bird",
-    name: "Kiwi",
-    animal: "birds",
-    img: "./images/bird.png",
-    price: 49.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 12,
-    title: "Talking green parrot",
-    name: "Rio",
-    animal: "birds",
-    img: "./images/bird.png",
-    price: 89.99,
-    category: "animals",
-    liked: true,
-  },
-  {
-    id: 13,
-    title: "Small lovebird pair",
-    name: "Coco",
-    animal: "birds",
-    img: "./images/bird.png",
-    price: 59.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 14,
-    title: "Cute dwarf hamster",
-    name: "Peanut",
-    animal: "small pets",
-    img: "./images/smallPet.png",
-    price: 19.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 15,
-    title: "Fluffy white rabbit",
-    name: "Snowy",
-    animal: "small pets",
-    img: "./images/smallPet.png",
-    price: 39.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 16,
-    title: "Friendly guinea pig",
-    name: "Oreo",
-    animal: "small pets",
-    img: "./images/smallPet.png",
-    price: 29.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 17,
-    title: "Green baby gecko",
-    name: "Ziggy",
-    animal: "reptiles",
-    img: "./images/reptiles.png",
-    price: 69.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 18,
-    title: "Calm pet turtle",
-    name: "Sheldon",
-    animal: "reptiles",
-    img: "./images/reptiles.png",
-    price: 54.99,
-    category: "animals",
-    liked: false,
-  },
-  {
-    id: 19,
-    title: "Small bearded dragon",
-    name: "Spike",
-    animal: "reptiles",
-    img: "./images/reptiles.png",
-    price: 99.99,
-    category: "animals",
-    liked: true,
-  },
-  {
-    id: 20,
-    title: "Young corn snake",
-    name: "Noodle",
-    animal: "reptiles",
-    img: "./images/reptiles.png",
-    price: 79.99,
-    category: "animals",
-    liked: false,
-  },
-
-  // ===== Food =====
-  {
-    id: 21,
-    title: "Premium dry dog food 5kg",
-    name: "Royal Meal",
-    animal: "dogs",
-    img: "./images/dogs.png",
-    price: 24.99,
-    category: "food",
-    liked: false,
-  },
-  {
-    id: 22,
-    title: "Salmon wet cat food pack",
-    name: "Ocean Feast",
-    animal: "cats",
-    img: "./images/cat.png",
-    price: 12.99,
-    category: "food",
-    liked: true,
-  },
-  {
-    id: 23,
-    title: "Tropical fish flakes",
-    name: "Aqua Bites",
-    animal: "fish",
-    img: "./images/fish.png",
-    price: 5.99,
-    category: "food",
-    liked: false,
-  },
-  {
-    id: 24,
-    title: "Mixed seed bird food 1kg",
-    name: "Seed Feast",
-    animal: "birds",
-    img: "./images/bird.png",
-    price: 7.99,
-    category: "food",
-    liked: false,
-  },
-
-  // ===== Treats =====
-  {
-    id: 25,
-    title: "Chewy bacon dog treats",
-    name: "Happy Bites",
-    animal: "dogs",
-    img: "./images/dogs-1.jpg",
-    price: 6.99,
-    category: "treats",
-    liked: false,
-  },
-  {
-    id: 26,
-    title: "Crunchy tuna cat treats",
-    name: "Whisker Snacks",
-    animal: "cats",
-    img: "./images/cat.png",
-    price: 4.99,
-    category: "treats",
-    liked: false,
-  },
-  {
-    id: 27,
-    title: "Honey sticks for birds",
-    name: "Sweet Perch",
-    animal: "birds",
-    img: "./images/bird.png",
-    price: 3.99,
-    category: "treats",
-    liked: true,
-  },
-
-  // ===== Supplies =====
-  {
-    id: 28,
-    title: "Strong walking leash",
-    name: "Safe Walker",
-    animal: "dogs",
-    img: "./images/dogs.png",
-    price: 12.99,
-    category: "supplies",
-    liked: false,
-  },
-  {
-    id: 29,
-    title: "Glass aquarium 40L",
-    name: "Blue Home",
-    animal: "fish",
-    img: "./images/fish.png",
-    price: 49.99,
-    category: "supplies",
-    liked: false,
-  },
-  {
-    id: 30,
-    title: "Hamster cage with wheel",
-    name: "Cozy Fort",
-    animal: "small pets",
-    img: "./images/smallPet.png",
-    price: 34.99,
-    category: "supplies",
-    liked: false,
-  },
-
-  // ===== Health =====
-  {
-    id: 31,
-    title: "Flea & tick shampoo",
-    name: "Clean Coat",
-    animal: "dogs",
-    img: "./images/dogs-1.jpg",
-    price: 9.99,
-    category: "health",
-    liked: false,
-  },
-  {
-    id: 32,
-    title: "Reptile vitamin drops",
-    name: "Vita Scale",
-    animal: "reptiles",
-    img: "./images/reptiles.png",
-    price: 11.99,
-    category: "health",
-    liked: false,
-  },
-];
 // start import header
 const headerId = document.querySelector("#header");
 
@@ -523,6 +192,7 @@ if (footerId) {
 // start categories section
 const CatitemsFilter = document.querySelector(".CatitemsFilter");
 
+
 if (CatitemsFilter) {
   const catFiltred = categoriesItemDB.filter(
     (Item) => Item.category === "animals",
@@ -536,29 +206,26 @@ if (CatitemsFilter) {
       <div class="ImgConatiner">
         <img src="${Item.img}" alt="${Item.name}">
       </div>
-    `;
+    `
     CatitemsFilter.appendChild(cartItem);
   });
 }
 
+
 // get all categoriesItemDB
 const AllCategories = document.querySelector(".AllCategories");
 
-if (categoriesItemDB && AllCategories) {
+if(categoriesItemDB && AllCategories){
   categoriesItemDB.forEach((Item) => {
     const cartItem = document.createElement("div");
     cartItem.classList.add("catItem");
-
     cartItem.innerHTML = `
       <h3>${Item.name}</h3>
       <div class="ImgConatiner">
       <img src="${Item.img}" alt="${Item.name}">
       </div>
-    `;
+    `
     AllCategories.appendChild(cartItem);
-    cartItem.addEventListener("click", () => {
-      window.location.href = `products.html?animalName=${encodeURIComponent(Item.name)}`;
-    });
   });
 }
 // end categories section
@@ -567,6 +234,7 @@ if (categoriesItemDB && AllCategories) {
 // start special Offer
 // ============================
 const specialItemstreats = document.querySelector(".treats");
+
 if (specialItemstreats) {
   SpecialOffersDB_Treats.forEach((item) => {
     const specialOffer = document.createElement("div");
@@ -604,7 +272,7 @@ if (specialItemsNewBrands) {
         <span>${item.Dr}</span>
       </div>
       <div class="Special_item_Img">
-        <img src="${item.img}" alt="${item.animal}">
+        <img src="${item.img}" alt="${item.name}">
       </div>
       <button>Shop Now</button>
     `;
@@ -620,99 +288,6 @@ if (specialItemsNewBrands) {
 }
 // end special Offer
 
-// start product page
-// start filter product page
-const filterBtnsDB = [
-  { id: 1, label: "All products", category: "all" },
-  { id: 2, label: "Food", category: "food" },
-  { id: 3, label: "Treats", category: "treats" },
-  { id: 4, label: "Supplies", category: "supplies" },
-  { id: 5, label: "Health", category: "health" },
-];
-
-const FilterBarLeft = document.querySelector(".FilterBar_Left");
-if (FilterBarLeft) {
-  filterBtnsDB.forEach((btn) => {
-    const buttonFil = document.createElement("button");
-    buttonFil.type = "button";
-    buttonFil.classList.add("filterBtn");
-    buttonFil.dataset.category = btn.category;
-    buttonFil.textContent = btn.label;
-
-    buttonFil.addEventListener("click", () => {
-      GetProductFilter(btn.category);
-      document
-        .querySelectorAll(".filterBtn")
-        .forEach((b) => b.classList.remove("active"));
-      buttonFil.classList.add("active");
-    });
-
-    FilterBarLeft.appendChild(buttonFil);
-  });
-}
-
-// end filter product page
-
-const products = document.querySelector(".products");
-const productsGrid = document.querySelector(".productsGrid");
-
-const params = new URLSearchParams(window.location.search);
-const animal = params.get("animalName");
-
-const CatFilter = categoriesItemDB.find((item) => {
-  return item.name === animal;
-});
-products.innerHTML = "";
-
-if (CatFilter) {
-  const CatNameProductPage = document.createElement("div");
-  CatNameProductPage.classList.add("CatName_ProductPage");
-  CatNameProductPage.innerHTML = `
-      <div class="CatName_ProductPage_content">
-        <img src="${CatFilter.img}" alt="${CatFilter.name}">
-        <h3>${CatFilter.name}</h3>
-      </div>
-    `;
-  productsGrid.insertAdjacentElement("beforebegin", CatNameProductPage);
-}
-
-const GetProductFilter = (categoryProducts) => {
-  const productFilterItems = productsDB.filter((item) => {
-    if (!categoryProducts || categoryProducts === "all") {
-      return item.animal === animal;
-    } else {
-      return item.animal === animal && item.category === categoryProducts;
-    }
-  });
-    products.innerHTML= ""
-  productFilterItems.forEach((item) => {
-    const productItem = document.createElement("div");
-    productItem.classList.add("productItem");
-    productItem.innerHTML = `
-      <div class="img">
-                <div class="addTocart">
-                  <button>Add to cart</button>
-                </div>
-                <img src="${item.img}" alt="">
-              </div>
-              <div class="productItem_header">
-                <div class="productItem_title">
-                  <p>${item.name}</p>
-                  <i class="fa-solid fa-heart"></i>
-                </div>
-                <span class="price">$ ${item.price}</span>
-              </div>
-    `;
-
-    products.appendChild(productItem);
-  });
-};
-
-if (products) {
-  GetProductFilter();
-}
-
-// end product page
 // start blogs
 
 const blogArtic = document.querySelector(".blogArtic");
@@ -736,6 +311,8 @@ if (blogArtic) {
   });
 }
 // end blogs
+
+
 
 function timer(duration) {
   const timerEl = document.querySelector(".timer");
