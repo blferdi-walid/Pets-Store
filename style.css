@@ -1061,11 +1061,11 @@ header {
   width: 100%;
   min-height: 100vh;
 }
-.productPage .RoutePages {
+.productPage .breadcrumb {
   width: 100%;
   height: 60px;
 }
-.productPage .RoutePages > span {
+.productPage .breadcrumb > span {
   color: var(--text-color);
   font-size: 1.2rem;
   width: 100%;
@@ -1179,6 +1179,7 @@ option:checked {
 }
 .products {
   width: 100%;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
@@ -1219,11 +1220,11 @@ option:checked {
   justify-content: center;
   align-items: center;
   display: flex;
-  opacity: 0; 
+  opacity: 0;
   transition: all 0.3s ease;
 }
 .products .productItem:hover .addTocart {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .products .productItem .img .addTocart button {
@@ -1265,3 +1266,26 @@ option:checked {
 }
 
 /* end product page  */
+
+/* start add more product  */
+.LoadMoreSection {
+  width: 100%;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LoadMoreSection #LoadMore {
+  padding: 15px 30px;
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.LoadMoreSection #LoadMore:hover {
+  background-color: red;
+  color: white;
+}
+/* end add more product  */
