@@ -683,14 +683,10 @@ if (CatFilter) {
   productsGrid.insertAdjacentElement("beforebegin", CatNameProductPage);
 }
 
-const GetProductFilter = (categoryProducts = "all") => {
-  const sortSelect = document.querySelector("#sortSelect");
-  let sortSelectValue = "disabled";
-  sortSelect.addEventListener("change", () => {
-    sortSelectValue = sortSelect.value;
-    console.log(sortSelectValue);
-  });
+const sortSelect = document.querySelector("#sortSelect");
+let sortSelectValue = "";
 
+const GetProductFilter = (categoryProducts = "all") => {
   const productFilterItems = productsDB.filter((item) => {
     if (!categoryProducts || categoryProducts === "all") {
       return item.animal === animal;
@@ -699,14 +695,11 @@ const GetProductFilter = (categoryProducts = "all") => {
     }
   });
 
-  if (sortSelectValue==="disabled") {
-    productFilterItems;
-  } else if (sortSelectValue === "increes") {
+  if (sortSelectValue  === "increes") {
     productFilterItems.sort((a, b) => a.price - b.price);
-  } else if (sortSelectValue === "decrees") {
+  } else if (sortSelectValue  === "decrees") {
     productFilterItems.sort((a, b) => b.price - a.price);
   }
-
   products.innerHTML = "";
 
   productFilterItems.forEach((item) => {
@@ -731,11 +724,16 @@ const GetProductFilter = (categoryProducts = "all") => {
     products.appendChild(productItem);
   });
 };
+if (sortSelect)
+  sortSelect.addEventListener("change", () => {
+    sortSelectValue = sortSelect.value;
+    const activeBtn = document.querySelector(".filterBtn.active");
+    GetProductFilter(activeBtn ? activeBtn.dataset.category : "all");
+  });
 
 if (products) {
   GetProductFilter();
 }
-
 // end product page
 // start blogs
 
