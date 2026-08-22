@@ -538,6 +538,10 @@ if (CatitemsFilter) {
       </div>
     `;
     CatitemsFilter.appendChild(cartItem);
+
+    cartItem.addEventListener("click", () => {
+      window.location.href = `products.html?animalName=${encodeURIComponent(Item.name)}`;
+    });
   });
 }
 
@@ -640,6 +644,9 @@ if (FilterBarLeft) {
     buttonFil.textContent = btn.label;
 
     buttonFil.addEventListener("click", () => {
+      const btnFilterLeft = document.querySelectorAll(".filterBtn");
+      console.log(btnFilterLeft);
+
       GetProductFilter(btn.category);
       document
         .querySelectorAll(".filterBtn")
@@ -676,7 +683,14 @@ if (CatFilter) {
   productsGrid.insertAdjacentElement("beforebegin", CatNameProductPage);
 }
 
-const GetProductFilter = (categoryProducts) => {
+const GetProductFilter = (categoryProducts = "all") => {
+  const sortSelect = document.querySelector("#sortSelect");
+  let sortSelectValue = "disabled";
+  sortSelect.addEventListener("change", () => {
+    sortSelectValue = sortSelect.value;
+    console.log(sortSelectValue);
+  });
+
   const productFilterItems = productsDB.filter((item) => {
     if (!categoryProducts || categoryProducts === "all") {
       return item.animal === animal;
@@ -684,7 +698,17 @@ const GetProductFilter = (categoryProducts) => {
       return item.animal === animal && item.category === categoryProducts;
     }
   });
-    products.innerHTML= ""
+
+  if (sortSelectValue==="disabled") {
+    productFilterItems;
+  } else if (sortSelectValue === "increes") {
+    productFilterItems.sort((a, b) => a.price - b.price);
+  } else if (sortSelectValue === "decrees") {
+    productFilterItems.sort((a, b) => b.price - a.price);
+  }
+
+  products.innerHTML = "";
+
   productFilterItems.forEach((item) => {
     const productItem = document.createElement("div");
     productItem.classList.add("productItem");
