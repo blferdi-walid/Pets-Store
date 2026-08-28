@@ -6,30 +6,41 @@
   --back-color-cover: rgb(237, 181, 7);
   --box-shadow--box:
     0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+
+  /* single source of truth for the mobile breakpoint */
+  --bp-mobile: 768px;
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 button,
 i,
 a,
 li {
   cursor: pointer;
 }
+
 body {
   width: 100%;
   min-height: 100vh;
   background-color: #fffaf5;
-  font-family: poppins;
+  font-family: poppins, system-ui, sans-serif;
 }
+
 .Body-Container {
   width: 90%;
   height: 100%;
   margin: 0 auto;
   position: relative;
 }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
 header {
   width: 100%;
   height: 70px;
@@ -40,38 +51,41 @@ header {
   align-items: center;
   border-bottom: 2px solid var(--text-color);
 }
+
 #menuIcon {
   display: none;
   cursor: pointer;
 }
+
 .Nav-Left .logo a {
   margin-right: 40px;
   font-size: 30px;
   color: var(--text-color);
 }
+
 .Nav-Right {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
-  border-radius: 0px 0 20px 20px;
+  border-radius: 0 0 20px 20px;
   transition: all 0.3s ease;
 }
-.Nav-Right.active {
-  display: block;
-}
+
 .Nav-Right > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
 }
-.Nav-Right ul:first-child {
+
+.Nav-Right ul {
   list-style: none;
   display: flex;
   flex-direction: row;
 }
+
 .Nav-Right ul a,
 .Nav-Right a {
   text-decoration: none;
@@ -84,106 +98,62 @@ header {
   font-size: 22px;
 }
 
-@media screen and (max-width: 728px) {
-  header {
-    width: 100%;
-    display: flex;
-    position: relative;
-  }
-  #menuIcon {
-    display: block;
-  }
-  .Nav-Right {
-    display: none;
-    position: absolute;
-    width: 90%;
-    height: auto;
-    top: 70px;
-    right: 0;
-    background-color: var(--text-color);
-    z-index: 100;
-
-    border-radius: 0px 0 20px 20px;
-    transition: all 0.3s ease;
-  }
-  .Nav-Right > div {
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-  }
-  .Nav-Right-Links > ul:first-child,
-  ul:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .Nav-Right-Links ul a {
-    color: white;
-    width: 100%;
-    height: 100%;
-    padding: 20px 0;
-    margin: 0;
-    transition: all 0.3s ease;
-  }
-  .Nav-Right-Links ul a:hover {
-    background-color: #616594;
-  }
-}
-
-/* start home page style */
+/* ============================================================
+   HOME
+   IDs removed from these selectors so media queries can override
+   them without specificity tricks.
+   ============================================================ */
 #home {
   width: 100%;
   min-height: calc(100vh - 70px);
   position: relative;
 }
+
 #homeContent {
   width: 100%;
   min-height: calc(100vh - 70px);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  place-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-#home #homeContent .rightHomeSide {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  place-content: center;
+
+.rightHomeSide {
+  width: 30%;
 }
-#home #homeContent .leftHomeSide {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  place-content: center;
+
+.leftHomeSide {
+  width: 70%;
 }
-#home #homeContent .rightHomeSide div {
+
+.rightHomeSide div {
   width: 70%;
   height: 70%;
   border-radius: 9999px;
   overflow: hidden;
 }
-#home #homeContent .rightHomeSide div img {
+
+.rightHomeSide div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#home #homeContent .leftHomeSide p:first-child {
+
+.leftHomeSide p:first-child {
   color: var(--text-color);
   font-weight: 600;
   font-size: 3rem;
   letter-spacing: 1px;
   width: 90%;
 }
-#home #homeContent .leftHomeSide div:first-child p:last-child {
+
+.leftHomeSide div:first-child p:last-child {
   color: #616594;
   font-weight: 400;
   font-size: 1.6rem;
 }
-#home #homeContent .leftHomeSide div:last-child {
+
+.leftHomeSide .leftHomeSide-search {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -191,12 +161,14 @@ header {
   height: 60px;
   margin-top: 40px;
 }
-#home #homeContent .leftHomeSide div:last-child div {
+
+.leftHomeSide-search > div {
   width: 50%;
   height: 60px;
   position: relative;
 }
-#home #homeContent .leftHomeSide div:last-child div .search-icon-right {
+
+.leftHomeSide-search .search-icon-right {
   position: absolute;
   right: 5%;
   top: 50%;
@@ -207,7 +179,7 @@ header {
   font-weight: bold;
 }
 
-#home #homeContent .leftHomeSide div:last-child div input {
+.leftHomeSide-search input {
   width: 100%;
   height: 100%;
   padding: 10px 20px;
@@ -216,13 +188,14 @@ header {
   border: none;
   border-radius: 30px;
   outline: none;
-  box-shadow: 3px 3px 8px 0 rgb(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.3);
 }
-#home #homeContent .leftHomeSide div:last-child div input::placeholder {
+
+.leftHomeSide-search input::placeholder {
   color: var(--text-color);
 }
 
-#home #homeContent .leftHomeSide div:last-child button {
+.leftHomeSide-search button {
   width: 140px;
   height: 60px;
   border: none;
@@ -233,8 +206,9 @@ header {
   box-shadow: var(--box-shadow--box);
 }
 
-/* end home page style */
-/* strat categories section  */
+/* ============================================================
+   CATEGORIES
+   ============================================================ */
 .categoriesPage {
   display: flex;
   justify-content: center;
@@ -243,39 +217,52 @@ header {
   min-height: 80vh;
   position: relative;
 }
+
 .categoriesContainer {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
+
 .categories {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 .categories > h3,
+.blogs > h3,
 .categoriesContainer .SectionName {
   width: 100%;
   font-size: 30px;
   color: var(--text-color);
-  margin: 50px 0px;
+  margin: 50px 0;
   text-align: center;
   font-weight: 500;
 }
+
 .categories .categoriesSection {
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   gap: 120px;
 }
+
 .CatitemsFilter,
 .AllCategories {
-  width: 100%;
+    width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
   place-items: center;
+  gap: 10px;
+
+}
+@media screen and (max-width: 768px) {
+  .AllCategories {
+    width: 100;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .catItem {
@@ -283,19 +270,20 @@ header {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
   align-self: stretch;
   width: 100%;
   height: 192px;
-  opacity: 1;
   background-color: rgb(255, 240, 225);
   border-radius: 24px;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px;
-  border: 0px;
+  border: 0;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
 }
+
 .catItem:hover {
   box-shadow: var(--box-shadow--box);
 }
+
 .ImgConatiner {
   width: 100%;
   height: 70%;
@@ -303,10 +291,12 @@ header {
   justify-content: center;
   align-items: flex-end;
 }
+
 .catItem .ImgConatiner img {
   height: 75%;
   object-fit: cover;
 }
+
 .catItem h3 {
   text-align: center;
   display: flex;
@@ -314,27 +304,19 @@ header {
   align-items: end;
 }
 
-/* start Homeproduct section  */
+/* ============================================================
+   HOME PRODUCT SECTION
+   ============================================================ */
 .HomeProduct {
   width: 100%;
   display: grid;
   grid-template-areas:
-    "special trending trending "
-    "special trending trending "
+    "special trending trending"
+    "special trending trending"
     "special favorite favorite";
   row-gap: 24px;
   column-gap: 60px;
   align-content: start;
-}
-@media (max-width: 768px) {
-  .HomeProduct {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "special"
-      "trending"
-      "favorite";
-    margin-top: 40px;
-  }
 }
 
 .HomeProduct .SpecialOffers {
@@ -344,6 +326,7 @@ header {
   flex-direction: column;
   gap: 30px;
 }
+
 .HomeProduct .trendingProduct {
   grid-area: trending;
 }
@@ -362,7 +345,6 @@ header {
 .SpecialOffers .adsFlashSale {
   background-color: var(--text-color);
   width: 100%;
-  /* max-width: 305px; */
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -373,16 +355,19 @@ header {
   border-radius: 20px;
   box-shadow: var(--box-shadow--box);
 }
+
 .SpecialOffers .adsFlashSale h4 {
   color: rgb(255, 200, 23);
   font-size: 1.8rem;
   font-weight: 500;
 }
+
 .SpecialOffers .adsFlashSale > span {
   color: #939497;
   font-size: 1.4rem;
   font-weight: 500;
 }
+
 .SpecialOffers .adsFlashSale .timer {
   width: 100%;
   display: flex;
@@ -390,6 +375,7 @@ header {
   align-items: center;
   gap: 10px;
 }
+
 .SpecialOffers .adsFlashSale .timer div {
   width: 40px;
   height: 50px;
@@ -403,6 +389,7 @@ header {
   border: none;
   border-radius: 10px;
 }
+
 .SpecialOffers .adsFlashSale .timer span {
   color: white;
   font-size: 1.8rem;
@@ -425,6 +412,7 @@ header {
   color: var(--text-color);
   box-shadow: var(--box-shadow--box);
 }
+
 .SpecialOffersHead h3 i,
 .favoriteCategoriesHead h3 i,
 .trendingProductHead h3 i {
@@ -452,10 +440,12 @@ header {
   width: 100%;
   text-align: center;
 }
+
 .SpecialItems .Special_item .Special_item_head h3 {
   font-size: 25px;
   font-weight: 500;
 }
+
 .Special_item_head > span {
   font-size: 18px;
   font-weight: 400;
@@ -466,21 +456,23 @@ header {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  overflow: hidden; /* only this wrapper clips the image */
-
+  overflow: hidden;
   position: relative;
 }
+
 .img-circle {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background-color: var(--back-color-cover);
 }
+
 .SpecialItems .Special_item .Special_item_Img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .SpecialItems .Special_item .Special_item_Img .discountpop {
   position: absolute;
   top: -5px;
@@ -493,6 +485,7 @@ header {
   font-size: 10px;
   font-weight: 600;
 }
+
 .SpecialItems .Special_item .Special_item_Img .discountpop span {
   font-size: 14px;
   width: 100%;
@@ -513,17 +506,18 @@ header {
   border-radius: 150px;
   border: none;
 }
-/* end Homeproduct section  */
 
-/* Start trending Product */
-
+/* ============================================================
+   TRENDING PRODUCTS
+   ============================================================ */
 .trendingProduct .TrandingItemsContainer {
   margin-top: 35px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
-.trendingProduct .TrandingItemsContainer > .trandingItems {
+
+.trandingItems {
   width: 100%;
   height: 250px;
   border: none;
@@ -534,19 +528,20 @@ header {
   align-items: center;
 }
 
-.trendingProduct .TrandingItemsContainer > .trandingItems .trandingItemIMG {
+.trandingItems .trandingItemIMG {
   width: 100%;
   height: 70%;
   object-fit: cover;
   border: none;
 }
-.trendingProduct .TrandingItemsContainer > .trandingItems .trandingItemIMG img {
+
+.trandingItems .trandingItemIMG img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
 }
 
-.trendingProduct .TrandingItemsContainer > .trandingItems .trandingItemContent {
+.trandingItems .trandingItemContent {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -555,20 +550,12 @@ header {
   padding: 10px;
 }
 
-.trendingProduct
-  .TrandingItemsContainer
-  > .trandingItems
-  .trandingItemContent
-  .trandingItemContent-head {
+.trandingItems .trandingItemContent-head {
   display: flex;
   align-items: center;
-  justify-self: center;
 }
-.trendingProduct
-  .TrandingItemsContainer
-  > .trandingItems
-  .trandingItemContent
-  h2 {
+
+.trandingItems .trandingItemContent h2 {
   height: 18px;
   color: rgb(127, 132, 171);
   flex-grow: 1;
@@ -576,56 +563,40 @@ header {
   font-weight: 500;
   text-transform: none;
   text-align: left;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   white-space: pre-line;
   word-break: break-word;
   display: flex;
   flex-direction: row;
   width: 90%;
 }
-.trendingProduct
-  .TrandingItemsContainer
-  > .trandingItems
-  .trandingItemContent
-  i {
+
+.trandingItems .trandingItemContent i {
   width: 10%;
   color: rgb(127, 132, 171);
 }
 
-.trendingProduct
-  .TrandingItemsContainer
-  > .trandingItems
-  .trandingItemContent
-  .textPrice {
+.trandingItems .trandingItemContent .textPrice {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.trendingProduct
-  .TrandingItemsContainer
-  > .trandingItems
-  .trandingItemContent
-  .textPrice
-  span:first-child {
+
+.trandingItems .trandingItemContent .textPrice span:first-child {
   color: var(--text-color-price--main);
   font-size: 1rem;
   font-weight: 500;
 }
-.trendingProduct
-  .TrandingItemsContainer
-  > .trandingItems
-  .trandingItemContent
-  .textPrice
-  span:last-child {
+
+.trandingItems .trandingItemContent .textPrice span:last-child {
   color: rgb(127, 132, 171);
   font-size: 0.8rem;
   font-weight: 500;
 }
 
-/* End trending Product */
-
-/* Start favorite section  */
-
+/* ============================================================
+   FAVORITE SECTION
+   ============================================================ */
 .favoriteCategories {
   grid-area: favorite;
   display: flex;
@@ -639,6 +610,7 @@ header {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
 }
+
 .favoriteItem {
   width: 100%;
   height: 250px;
@@ -651,6 +623,7 @@ header {
   position: relative;
   overflow: hidden;
 }
+
 .favoriteItem::before {
   content: "";
   width: 100%;
@@ -662,17 +635,18 @@ header {
   opacity: 0.5;
   z-index: 2;
 }
+
 .favoriteItem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center; /* shifts crop to show more of the right side */
-
+  object-position: right center;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
 }
+
 .favoriteItem div {
   z-index: 2;
   display: flex;
@@ -681,16 +655,19 @@ header {
   flex-direction: column;
   gap: 10px;
 }
+
 .favoriteItem div h4 {
   text-align: center;
   color: var(--text-color);
   font-size: 1.8rem;
   font-weight: 500;
 }
+
 .favoriteItem div p {
   color: var(--text-color);
   font-size: 1.2rem;
 }
+
 .favoriteItem div button {
   padding: 20px 40px;
   border: none;
@@ -701,15 +678,15 @@ header {
   box-shadow: var(--box-shadow--box);
   transition: all 0.3s ease;
 }
+
 .favoriteItem div button:hover {
   background-color: #ff9679;
   color: #000958;
 }
-/* end favorite  section  */
 
-/* end categories section  */
-
-/* strat contact secttion  */
+/* ============================================================
+   CONTACT
+   ============================================================ */
 .contact {
   display: flex;
   justify-content: center;
@@ -728,16 +705,13 @@ header {
     "div1 div3"
     "div1 div3"
     "div2 div3";
-
   gap: 8px;
   position: relative;
 }
 
 .contact .div1 {
   grid-area: div1;
-
   background-color: white;
-
   height: 100%;
   border: none;
   border-radius: 10px;
@@ -745,47 +719,48 @@ header {
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .contact .div1 h3 {
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 20px;
   color: var(--text-color);
 }
+
 .contact .div1,
 .contact .div3 {
   padding: 40px;
 }
-.contact .div3 {
-  grid-area: div3;
-}
+
 .contact .div3 form {
   width: 100%;
   height: 90%;
 }
+
 .contact .div1 > div {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
 }
+
 .contact .parent > .div1 > div div span,
 .SocialLinks span i {
   color: var(--text-color);
 }
+
 .contact .parent > .div1 i {
   margin-right: 10px;
   margin-bottom: 7px;
   font-size: 18px;
 }
+
 .contact .parent > .div1 .SocialLinks i {
   font-size: 24px;
   margin-top: 10px;
 }
 
-.Address {
-  grid-row-start: 2;
-}
-
+.Address,
 .Social {
   grid-row-start: 2;
 }
@@ -796,8 +771,7 @@ header {
 
 .contact .div2 {
   grid-area: div2;
-  background-color: red;
-
+  background-color: var(--second--primary-backgr);
   border: none;
   border-radius: 10px;
   box-shadow:
@@ -815,43 +789,80 @@ header {
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media screen and (max-width: 728px) {
-  .contact {
-    padding: 20px 0;
-  }
-  .contact .parent {
-    grid-template-areas:
-      "div1"
-      "div2 "
-      "div3 ";
-    width: 100%;
-    height: auto;
-  }
-  header {
-    padding: 0px 19px;
-  }
-  .Body-Container {
-    width: 100%;
-  }
-  .contact .div1,
-  .contact .div2,
-  .contact .div3 {
-    border-radius: 0;
-  }
+.div3 h3 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
 }
-/*footer*/
 
+.div3 form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.div3 form label {
+  color: white;
+  font-size: 16px;
+}
+
+.div3 form > div:first-child {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.div3 form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.div3 form input {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #293173;
+}
+
+.div3 form textarea {
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #293173;
+  padding: 10px;
+  color: #676873;
+}
+
+.div3 form button {
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 20px;
+  background-color: #ff5b2e;
+  color: white;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .footer {
   background-color: #fde7cb;
   width: 100%;
   min-height: 300px;
   margin-top: 50px;
 }
+
 .footer .Footer-Container {
   width: 80%;
   height: 100%;
   margin: 0 auto;
 }
+
 .footer .Footer-Container .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -859,64 +870,50 @@ header {
   padding: 60px 0;
 }
 
-@media screen and (max-width: 728px) {
-  .footer .Footer-Container .footer-content {
-    display: grid;
-    place-items: center;
-    justify-content: flex-end;
-  }
-}
-
-.footer .Footer-Container .footer-content .footerItem:nth-child(1) i {
+.footer .footer-content .footerItem:nth-child(1) i {
   font-size: 40px;
 }
-.footer .Footer-Container .footer-content > .footerItem {
+
+.footer .footer-content > .footerItem {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 10px;
 }
-.footer .Footer-Container .footer-content .footerItem h4 {
+
+.footer .footer-content .footerItem h4 {
   font-weight: 600;
   color: var(--text-color);
   font-size: 16px;
   display: flex;
   justify-content: flex-start;
 }
-.footer .Footer-Container .footer-content .footerItem a {
+
+.footer .footer-content .footerItem a {
   text-decoration: none;
   color: var(--text-color);
   font-size: 16px;
 }
-.footer .Footer-Container .footer-content .footerItem:last-child {
+
+.footer .footer-content .footerItem:last-child {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-.footer .Footer-Container .footer-content .footerItem:last-child div div {
+
+.footer .footer-content .footerItem:last-child div div {
   display: flex;
   flex-direction: row;
 }
-.footer
-  .Footer-Container
-  .footer-content
-  .footerItem:last-child
-  > .footerItem
-  i:last-child {
+
+.footer .footer-content .footerItem:last-child > .footerItem i:last-child {
   font-size: 40px;
   color: var(--text-color);
   margin-right: 10px;
 }
-.footer
-  .Footer-Container
-  .footer-content
-  .footerItem:last-child
-  > .footerItem
-  h4 {
-  left: 0;
-}
+
 .footer hr {
   border: 1px solid var(--text-color);
 }
@@ -931,73 +928,23 @@ header {
   color: var(--text-color);
 }
 
-.div3 h3 {
-  font-weight: 500;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: white;
-}
-.div3 form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.div3 form label {
-  color: white;
-  font-size: 16px;
-}
-.div3 form > div:first-child {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-.div3 form > div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.div3 form input {
-  width: 100%;
-  height: 30px;
-  padding: 5px;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #293173;
-}
-.div3 form textarea {
-  height: 100px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  border: 1px solid #293173;
-  padding: 10px;
-  color: #676873;
-}
-.div3 form button {
-  height: 40px;
-  border: none;
-  border-radius: 20px;
-  margin-top: 20px;
-  background-color: #ff5b2e;
-  color: white;
-}
-
-/* strat bolg section  */
+/* ============================================================
+   BLOG
+   ============================================================ */
 .blogs {
   width: 100%;
   min-height: 600px;
   position: relative;
 }
+
 .blogs .blogArtic {
   display: grid;
   width: 100%;
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
   place-items: center;
 }
+
 .blogs .blogArtic .blogsItem {
   width: 100%;
   height: 400px;
@@ -1006,65 +953,72 @@ header {
   display: flex;
   flex-direction: column;
   border: none;
-  box-shadow: 3px 2px 8px 3px rgb(0, 0, 0, 0.1);
+  box-shadow: 3px 2px 8px 3px rgba(0, 0, 0, 0.1);
 }
 
 .blogs .blogArtic img {
   width: 100%;
   height: 50%;
   object-fit: cover;
-  display: flex;
-  flex-direction: column;
   background-color: #293173;
   border-radius: 20px;
 }
+
 .blogs .blogArtic .blogsItem .blogItem_content {
   width: 100%;
   height: 50%;
-  padding: 20px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .blogs .blogArtic .blogsItem .blogItem_content h3 {
   font-size: 16px;
   font-weight: 600;
 }
+
 .blogs .blogArtic .blogsItem .blogItem_content p {
   font-size: 12px;
   font-weight: 400;
 }
+
 .blogs .blogArtic .blogsItem .blogItem_content .authur {
   width: 100%;
   height: 30px;
-  margin: 10px 0px;
+  margin: 10px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
+
 .blogs .blogArtic .blogsItem .blogItem_content .authur > img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
+
 .blogs .blogArtic .blogsItem .blogItem_content .authur span {
   margin-right: 20px;
   font-size: 14px;
   font-weight: 500;
 }
-/* end bolg section  */
 
-/* start product page  */
+/* ============================================================
+   PRODUCT PAGE
+   ============================================================ */
 .productPage {
   width: 100%;
   min-height: 100vh;
 }
+
 .productPage .breadcrumb {
   width: 100%;
   height: 60px;
 }
+
 .productPage .breadcrumb > span {
   color: var(--text-color);
   font-size: 1.2rem;
@@ -1074,11 +1028,20 @@ header {
   justify-content: flex-start;
   align-items: center;
 }
+
+.UrlCON {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 10px 0;
+}
+
 .productPage .ProductsContainer {
   width: 100%;
   height: calc(100% - 60px);
 }
-.productPage .ProductsContainer .CatName_ProductPage {
+
+.CatName_ProductPage {
   width: 100%;
   height: 280px;
   display: flex;
@@ -1086,10 +1049,7 @@ header {
   align-items: center;
 }
 
-.productPage
-  .ProductsContainer
-  .CatName_ProductPage
-  .CatName_ProductPage_content {
+.CatName_ProductPage_content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1098,11 +1058,7 @@ header {
   flex-direction: column;
 }
 
-.productPage
-  .ProductsContainer
-  .CatName_ProductPage
-  .CatName_ProductPage_content
-  > img {
+.CatName_ProductPage_content > img {
   width: 100%;
   height: 80%;
   object-fit: cover;
@@ -1110,11 +1066,8 @@ header {
   overflow: hidden;
   background-color: rgb(255, 240, 225);
 }
-.productPage
-  .ProductsContainer
-  .CatName_ProductPage
-  .CatName_ProductPage_content
-  > h3 {
+
+.CatName_ProductPage_content > h3 {
   width: 100%;
   height: 20%;
   justify-content: center;
@@ -1124,26 +1077,30 @@ header {
   font-weight: 500;
   color: var(--text-color);
 }
+
 .productsGrid {
   width: 100%;
-  height: calc(100% - 280px);
+  display: flex;
+  flex-direction: column;
 }
+
 .productsGrid .FilterBar {
   width: 100%;
   height: 70px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.productsGrid .FilterBar .FilterBar_Left,
-.productsGrid .FilterBar .FilterBar_Right {
+
+.FilterBar_Left,
+.FilterBar_Right {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-.productsGrid .FilterBar .FilterBar_Left .filterBtn,
-.FilterBar .FilterBar_Right > button {
+
+.FilterBar_Left .filterBtn,
+.FilterBar_Right > button {
   padding: 10px 15px;
   background-color: white;
   border: none;
@@ -1152,14 +1109,14 @@ header {
   color: var(--text-color);
   transition: all 0.3s ease;
 }
-.productsGrid .FilterBar .FilterBar_Left .filterBtn:hover,
-.productsGrid .FilterBar .FilterBar_Left .filterBtn.active {
+
+.FilterBar_Left .filterBtn:hover,
+.FilterBar_Left .filterBtn.active {
   background-color: var(--text-color);
   color: white;
 }
-/* ============== */
 
-.FilterBar .FilterBar_Right > select {
+.FilterBar_Right > select {
   padding: 10px 15px;
   box-shadow: var(--box-shadow--box);
   background-color: white;
@@ -1167,16 +1124,18 @@ header {
   border: none;
 }
 
-.FilterBar .FilterBar_Right > select option {
+.FilterBar_Right > select option {
   background-color: #fde7cb;
   color: var(--text-color);
   border: none;
 }
+
 option:hover,
 option:checked {
   background-color: var(--text-color);
   color: white;
 }
+
 .products {
   width: 100%;
   margin-top: 30px;
@@ -1197,6 +1156,7 @@ option:checked {
   box-shadow: var(--box-shadow--box);
   border-radius: 10px;
 }
+
 .products .productItem .img {
   width: 100%;
   height: 75%;
@@ -1204,11 +1164,13 @@ option:checked {
   overflow: hidden;
   position: relative;
 }
+
 .products .productItem .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .products .productItem .img .addTocart {
   position: absolute;
   top: 0;
@@ -1223,6 +1185,7 @@ option:checked {
   opacity: 0;
   transition: all 0.3s ease;
 }
+
 .products .productItem:hover .addTocart {
   opacity: 1;
 }
@@ -1234,13 +1197,15 @@ option:checked {
   color: var(--text-color);
   box-shadow:
     0 4px 8px 0 rgba(255, 255, 255, 0.4),
-    0 1px 20px 0px rgba(255, 255, 255, 0.5);
+    0 1px 20px 0 rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
 }
+
 .products .productItem .img .addTocart button:hover {
   background-color: #000958;
   color: white;
 }
+
 .products .productItem .productItem_header {
   width: 100%;
   height: 25%;
@@ -1249,11 +1214,13 @@ option:checked {
   flex-direction: column;
   gap: 10px;
 }
+
 .products .productItem .productItem_header .productItem_title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .products .productItem .productItem_header .productItem_title > i,
 .products .productItem .productItem_header .productItem_title > p {
   color: var(--text-color);
@@ -1265,9 +1232,6 @@ option:checked {
   font-weight: 600;
 }
 
-/* end product page  */
-
-/* start add more product  */
 .LoadMoreSection {
   width: 100%;
   margin-top: 70px;
@@ -1276,16 +1240,172 @@ option:checked {
   justify-content: center;
   align-items: center;
 }
+
 .LoadMoreSection #LoadMore {
   padding: 15px 30px;
   background-color: transparent;
-  color: red;
-  border: 1px solid red;
+  color: var(--back-color-btn-search);
+  border: 1px solid var(--back-color-btn-search);
   border-radius: 9999px;
   transition: all 0.3s ease;
 }
+
 .LoadMoreSection #LoadMore:hover {
-  background-color: red;
+  background-color: var(--back-color-btn-search);
   color: white;
 }
-/* end add more product  */
+
+/* ============================================================
+   MOBILE — every media query lives here, at the bottom,
+   so source order works in their favour.
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  .Body-Container {
+    width: 100%;
+  }
+
+  /* --- header --- */
+  header {
+    position: relative;
+    padding: 0 19px;
+  }
+
+  #menuIcon {
+    display: block;
+  }
+
+  .Nav-Right {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: auto;
+    top: 70px;
+    right: 0;
+    background-color: var(--text-color);
+    z-index: 100;
+  }
+
+  .Nav-Right.active {
+    display: block;
+  }
+
+  .Nav-Right .Nav-Right-Links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+
+  .Nav-Right-Links ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .Nav-Right-Links ul a {
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+
+  .Nav-Right-Links ul a:hover {
+    background-color: #616594;
+  }
+
+  /* --- home --- */
+  #homeContent {
+    flex-direction: column;
+  }
+
+  .leftHomeSide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .leftHomeSide .leftHomeSide-search {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .leftHomeSide-search > div,
+  .leftHomeSide-search input,
+  .leftHomeSide-search button {
+    width: 100%;
+  }
+
+  .rightHomeSide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightHomeSide div {
+    width: 80%;
+    height: 80%;
+    margin: 20px;
+    border-radius: 50px;
+  }
+
+  /* --- home products --- */
+  .HomeProduct {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "special"
+      "trending"
+      "favorite";
+    margin-top: 40px;
+  }
+
+  /* --- product page --- */
+  .productsGrid .FilterBar {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    min-height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .FilterBar_Left {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* --- contact --- */
+  .contact {
+    padding: 20px 0;
+  }
+
+  .contact .parent {
+    grid-template-areas:
+      "div1"
+      "div2"
+      "div3";
+    width: 100%;
+    height: auto;
+  }
+
+  .contact .div1,
+  .contact .div2,
+  .contact .div3 {
+    border-radius: 0;
+  }
+
+  /* --- footer --- */
+  .footer .Footer-Container .footer-content {
+    place-items: center;
+  }
+}
