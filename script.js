@@ -2884,11 +2884,17 @@ function productPageHTML() {
 }
 function renderUrl() {
   const urlHtml = document.querySelector(".UrlCON");
+  if (!urlHtml) return;
+
   const path = location.hash.slice(1) || "/";
   const segments = path.split("/").filter(Boolean).map(decodeURIComponent);
-  console.log(segments);
-  urlHtml.innerHTML = segments.join(" / ");
+
+  urlHtml.innerHTML = segments
+    .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
+    .join(`<span class="sep"> / </span>`);
 }
+
+
 function renderProductPage(animalName) {
   if (!categoriesContainer) return;
 
@@ -3006,6 +3012,7 @@ function router() {
     .filter(Boolean)
     .map(decodeURIComponent);
   if (section === "categories" && param) {
+
     renderProductPage(param);
   }
 }
