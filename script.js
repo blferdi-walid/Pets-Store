@@ -2716,7 +2716,7 @@ const header = `
       </div>
       <div class="Nav-Right">
         <div class="Nav-Right-Links" >
-          <ul >
+          <ul class="Nav-Right-Links-text" >
             <a href="index.html">Home</a>
             <a href="categories.html">Categories</a>
             <a href="">Blog</a>
@@ -2736,7 +2736,7 @@ if (headerId) {
   headerId.innerHTML = header;
 
   // uppercase the nav links, now that the header actually exists in the DOM
-  const NavLinks = document.querySelectorAll(".Nav-Right-Links ul a");
+  const NavLinks = document.querySelectorAll(".Nav-Right-Links-text ul a");
   NavLinks.forEach((link) => {
     link.textContent = link.textContent.toUpperCase();
   });
