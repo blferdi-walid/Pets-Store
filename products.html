@@ -10,7 +10,6 @@
     href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="CategoriesStyle.css" />
   <title>Pets</title>
 </head>
 
@@ -19,34 +18,19 @@
     <!-- start Contact  -->
     <header id="header"></header>
 
-    <section class="productPage">
-      <div class="ProductsContainer">
-        <div class="productsGrid">
-          <div class="FilterBar">
-            <div class="FilterBar_Left">
-            </div>
+    <section class="productPage" id="productPage">
+      
 
-            <div class="FilterBar_Right">
-              <select id="sortSelect">
-                <option value="disabled">--Sort By--</option>
-                <option value="" disabled hidden>Sort by</option>
-                <option value="increes">Price low</option>
-                <option value="decrees">Price high</option>
-              </select>
-              <button> filterBtn</button>
-            </div>
-          </div>
-
-          <div class="products"></div>
-          <div class="LoadMoreSection"> <button id="LoadMore">Load more</button></div>
-
-        </div>
-
-      </div>
-
-    </section>
-
+    </section>    
   </div>
+  
+  <div class="MightLike">
+    <h3>You might also like</h3>
+    <div class="MightLikeProducts" > </div>
+  </div>
+  
+
+
   <!-- End Contact  -->
   <div class="footer"></div>
   <script src="script.js"></script>

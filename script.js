@@ -1,3 +1,5 @@
+"use strict";
+
 const categoriesItemDB = [
   {
     id: 1,
@@ -2742,8 +2744,6 @@ if (headerId) {
   });
 }
 
-
-
 // end import header
 
 // start import footer
@@ -2862,7 +2862,7 @@ function productPageHTML() {
   return `
     <section class="productPage">
     <p class="UrlCON"> contaier/dogs</p>
-      <div class="ProductsContainer">
+      <div class="ProductsContainer" id="ProductsContainer">
         <div class="productsGrid">
           <div class="FilterBar">
             <div class="FilterBar_Left"></div>
@@ -2887,13 +2887,12 @@ function renderUrl() {
   if (!urlHtml) return;
 
   const path = location.hash.slice(1) || "/";
-  const segments = path.split("/").filter(Boolean).map(decodeURIComponent);
 
+  const segments = path.split("/").filter(Boolean).map(decodeURIComponent);
   urlHtml.innerHTML = segments
     .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
     .join(`<span class="sep"> / </span>`);
 }
-
 
 function renderProductPage(animalName) {
   if (!categoriesContainer) return;
@@ -2962,9 +2961,11 @@ function getFilteredProducts(category) {
 
 function productCardHTML(item) {
   return `
-    <div class="productItem">
+    <div class="productItem"  data-id="${item.id}" >
       <div class="img">
-        <div class="addTocart"><button>Add to cart</button></div>
+        <div class="addTocart">
+        <button class="addTocartBtn" data-id="${item.id}">Add to cart</button>
+        </div>
         <img src="${item.img}" alt="">
       </div>
       <div class="productItem_header">
@@ -2976,6 +2977,111 @@ function productCardHTML(item) {
       </div>
     </div>`;
 }
+const addTocartBtn = document.getElementById("addTocart");
+const productP = document.querySelector("#productPage");
+
+// function addTocartFunction(id) {
+//   const item = productsDB.find((p) => p.id ===  Number(id));
+// }
+function productDetailHTML(item) {
+  if (!item) return `<h3>There is no product with this id</h3>`;
+
+  return ` <section class="productPage">
+  <p class="UrlCON"> contaier/dogs</p>
+      <div class="productMainContainer">
+        <div class="ProductImgs">
+          <div class="ProductSubImgs">
+            <img src="./images/dogs-1.jpg" alt="">
+            <img src="./images/dogs-1.jpg" alt="">
+            <img src="./images/dogs-1.jpg" alt="">
+            <img src="./images/dogs-1.jpg" alt="">
+            <img src="./images/dogs-1.jpg" alt="">
+
+          </div>
+          <div class="ProductMainImg">
+            <img src="${item.img}" alt="No image ">
+          </div>
+        </div>
+        <div class="productDescription">
+          <div class="ItemHead">
+            <h3>${item.title}</h3>
+            <div class="RatingItem ">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(4.8/5 ,12 Reviews)</span>
+            </div>
+          </div>
+          <div class="ItemPrice">
+            <span class="MainPrice">$ ${item.price} </span> <span class="OldPrice"> $ ${Number(item.price) + 10}</span>
+          </div>
+          <p class="DescriptionItem">a one of a kind heated dog bed . and blanket, including a fuzzy inner lining and
+            warming feature</p>
+          <div class="ColoresProdusctSection">
+            <h4>Colors <span id="ColorName"></span></h4>
+            <div class="ColoresAivilableItem"></div>
+          </div>
+          <div class="QuanitySectionItem">
+            <div class="SizeInput">
+              <label for="size" id="sizeLable">Size <span>Small</span></label>
+
+              <select name="" id="SizeItem">
+                <option value="SmaL">S</option>
+                <option value="Meduim">M</option>
+                <option value="Large">L</option>
+                <option value="X Large">XL</option>
+                <option value="XXl">XXL</option>
+              </select>
+            </div>
+            <div class="SizeQuantity">
+              <label for="quantity"> Qtv:</label>
+              <input type="number" class="qty" value="1" min="1" max="99">
+            </div>
+          </div>
+          <div class="Add-ToCard" > 
+            <button class="Add-ToCardBtn" >Add to cart</button>
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+          </div>
+
+        </div>
+      </div>
+      </section>
+  `;
+}
+
+function renderProductDetails() {
+  const productPage = document.querySelector("#productPage");
+  if (!productPage) return;
+
+  const id = Number(new URLSearchParams(location.search).get("id"));
+  const product = productsDB.find((p) => p.id === id);
+
+  if (!product) {
+    productPage.innerHTML = `<p>Product not found</p>`;
+    return;
+  }
+
+  productPage.innerHTML = productDetailHTML(product);
+
+  const urlSegments = productPage.querySelector(".UrlCON");
+  if (urlSegments) {
+    const { title, animal, category } = product;
+    urlSegments.textContent = `categories/${animal}/${category}/${title}`;
+    const text = urlSegments.textContent; 
+    const urlSplt = text.split("/")
+    urlSegments.innerHTML = urlSplt
+    .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
+    .join(`<span class="sep"> / </span>`);
+
+    console.log(urlSplt)
+  }
+
+  mightLikeItems(product.animal);
+  initProductDetail();
+}
+renderProductDetails();
 
 function GetProductFilter(category = "all") {
   const products = document.querySelector(".products");
@@ -3005,6 +3111,41 @@ document.addEventListener("change", (e) => {
   GetProductFilter(activeCategory());
 });
 
+document.addEventListener("click", (e) => {
+  const cartBtn = e.target.closest(".addTocartBtn");
+  if (cartBtn) {
+    addTocartFunction(cartBtn.dataset.id);
+    return;
+  }
+
+  const card = e.target.closest(".productItem");
+  if (!card) return;
+
+  const productFind = productsDB.find(
+    (item) => item.id === Number(card.dataset.id),
+  );
+  if (!productFind) return;
+
+  console.log(productFind.id);
+  location.href = `products.html?id=${productFind.id}`;
+});
+
+function productDetails(item) {
+  return;
+}
+
+function mightLikeItems(category) {
+  const MightLikeProductscontainer =
+    document.querySelector(".MightLikeProducts");
+  if (!MightLikeProductscontainer) return;
+
+  const items = productsDB.filter((p) => p.animal === category);
+
+  MightLikeProductscontainer.innerHTML = items.length
+    ? items.map(productCardHTML).slice(0, 4).join("")
+    : `<p>No products in this category.</p>`;
+}
+
 function router() {
   const path = location.hash.slice(1) || "/";
   const [section, param] = path
@@ -3012,8 +3153,9 @@ function router() {
     .filter(Boolean)
     .map(decodeURIComponent);
   if (section === "categories" && param) {
-
     renderProductPage(param);
+  } else if (section === "productPage") {
+    renderProductDetail(param);
   }
 }
 
@@ -3103,7 +3245,6 @@ if (blogArtic) {
 }
 // end blogs
 
-
 // ============================
 // start responsive header (mobile menu toggle)
 // ============================
@@ -3116,3 +3257,69 @@ if (menuIcon && NavRight) {
   });
 }
 // end responsive header
+
+function initProductDetail() {
+  const paragraph = document.querySelector(".DescriptionItem");
+  if (!paragraph) return;
+
+  // size label
+  const SizeLab = document.querySelector("#sizeLable span");
+  const SizeItemValue = document.querySelector("#SizeItem");
+
+  if (SizeLab && SizeItemValue) {
+    SizeItemValue.addEventListener("change", (e) => {
+      SizeLab.textContent = e.target.value;
+    });
+  }
+
+  // read more
+  const sentences = paragraph.textContent.split(".").filter((s) => s.trim());
+
+  if (sentences.length > 1) {
+    const visible = sentences[0].trim() + ".";
+    const hidden = sentences.slice(1).join(".").trim() + ".";
+
+    paragraph.innerHTML = `
+      ${visible}
+      <span class="moreText" hidden>${hidden}</span>
+      <a href="#" class="readMoreLink">Read more</a>
+    `;
+
+    const link = paragraph.querySelector(".readMoreLink");
+    const more = paragraph.querySelector(".moreText");
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      more.hidden = !more.hidden;
+      link.textContent = more.hidden ? "Read more" : "Read less";
+    });
+  }
+
+  // color buttons
+  const container = document.querySelector(".ColoresAivilableItem");
+  const colorN = document.querySelector("#ColorName");
+  if (!container) return;
+
+  const colors = ["blue", "yellow", "black"];
+
+  colors.forEach((color) => {
+    const btn = document.createElement("button");
+    btn.classList.add("colorProduct");
+    btn.dataset.color = color;
+    btn.style.backgroundColor = color;
+    btn.setAttribute("aria-label", `Select ${color}`);
+    container.appendChild(btn);
+  });
+
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest(".colorProduct");
+    if (!btn) return;
+
+    container
+      .querySelectorAll(".colorProduct")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    if (colorN) colorN.textContent = btn.dataset.color;
+  });
+}

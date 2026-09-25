@@ -24,6 +24,24 @@ li {
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a157a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #293173;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -100,8 +118,6 @@ header {
 
 /* ============================================================
    HOME
-   IDs removed from these selectors so media queries can override
-   them without specificity tricks.
    ============================================================ */
 #home {
   width: 100%;
@@ -256,6 +272,7 @@ header {
   gap: 10px;
   place-items: center;
 }
+
 .AllCategories {
   width: 80%;
   margin: 0 auto;
@@ -853,7 +870,7 @@ header {
   background-color: #fde7cb;
   width: 100%;
   min-height: 300px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .footer .Footer-Container {
@@ -868,23 +885,6 @@ header {
   gap: 40px;
   padding: 60px 0;
 }
-@media (max-width: 728px) {  
-    .footer .Footer-Container .footer-content {
-    grid-template-columns: 1fr;
-    place-items: center;
-  }
-
-  .footer .footer-content .footerItem h4 {
-justify-content: center;  align-items: center;
-display: flex;
-}
-
-
-  .footer .footer-content .footerItem a {
-    text-align: center;
-  }
-
-}
 
 .footer .footer-content .footerItem:nth-child(1) i {
   font-size: 40px;
@@ -893,16 +893,7 @@ display: flex;
 .footer .footer-content > .footerItem {
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
   gap: 10px;
-}
-
-.footer .footer-content .footerItem h4 {
-  font-weight: 600;
-  color: var(--text-color);
-  font-size: 16px;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .footer .footer-content .footerItem a {
@@ -956,16 +947,9 @@ display: flex;
 .blogs .blogArtic {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   place-items: center;
-}
-@media (max-width:728px){
-  .blogs .blogArtic{
-      grid-template-columns: repeat(1,1fr);
-
-  }
-
 }
 
 .blogs .blogArtic .blogsItem {
@@ -1034,12 +1018,203 @@ display: flex;
    ============================================================ */
 .productPage {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.productPage .breadcrumb {
+.productPage .productMainContainer {
   width: 100%;
-  height: 60px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 30px;
+  box-shadow: var(--box-shadow--box);
+  border-radius: 15px;
+  margin: 20px 0px;
+}
+
+.ProductImgs {
+  width: 60%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-areas: "ProductSubImgs ProductMainImg";
+  gap: 15px;
+}
+
+.ProductSubImgs {
+  grid-area: ProductSubImgs;
+  display: flex;
+  padding: 10px 0;
+  gap: 10px;
+  border: none;
+  border-radius: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.ProductSubImgs img {
+  width: 90%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.ProductMainImg {
+  grid-area: ProductMainImg;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.ProductMainImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productDescription {
+  width: 40%;
+  height: 100%;
+  padding: 20px 70px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productDescription .ItemHead > h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.productDescription .ItemPrice {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.productDescription .ItemPrice .MainPrice {
+  font-size: 1.4rem;
+  color: var(--text-color-price--main);
+}
+
+.productDescription .ItemPrice .OldPrice {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.productDescription .DescriptionItem {
+  color: rgb(128, 128, 120);
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.readMoreLink {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+  margin: 5px 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.QuanitySectionItem {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#sizeLable span {
+  font-size: 0.9rem;
+  margin-left: 5px;
+  color: #676873;
+}
+
+.QuanitySectionItem .SizeInput,
+.QuanitySectionItem .SizeQuantity {
+  display: flex;
+  flex-direction: column;
+}
+
+.QuanitySectionItem .SizeInput select,
+.QuanitySectionItem .SizeQuantity input {
+  width: 100px;
+  height: 40px;
+  padding: 10px 5px;
+  border: 2px solid rgb(172, 172, 172);
+  border-radius: 999999px;
+}
+
+.QuanitySectionItem .SizeInput label,
+.QuanitySectionItem .SizeQuantity label {
+  color: var(--text-color);
+}
+
+.Add-ToCard {
+  width: 100%;
+  height: 50px;
+}
+
+.Add-ToCardBtn {
+  background-color: #000958;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 99999px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.Add-ToCardBtn:hover {
+  background-color: #293173;
+  cursor: pointer;
+}
+
+.Add-ToCard a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #676873;
+  box-sizing: border-box;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Add-ToCard a:hover {
+  border: 2px solid red;
+}
+
+.Add-ToCard a:hover .fa-heart {
+  color: red;
+}
+
+.Add-ToCard .fa-heart {
+  color: #676873;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.RatingItem i {
+  color: #939497;
+}
+
+.RatingItem span {
+  font-size: 12px;
+  color: #939497;
+  margin-left: 5px;
 }
 
 .productPage .breadcrumb > span {
@@ -1052,12 +1227,48 @@ display: flex;
   align-items: center;
 }
 
+.ColoresProdusctSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ColoresProdusctSection h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+#ColorName {
+  color: #acaaaa;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.ColoresAivilableItem {
+  display: flex;
+  gap: 10px;
+}
+
+.colorProduct {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+}
+
+.colorProduct.active {
+  border: 3px solid black;
+}
+
 .UrlCON {
-  font-size: 1.2rem;
-  /* font-weight: 500; */
+  font-size: 16px;
   color: var(--text-color);
   margin: 10px 0;
+  width: 100%;
 }
+
 .lastSegmentURL:last-child {
   font-weight: 600;
 }
@@ -1162,6 +1373,7 @@ option:checked {
   color: white;
 }
 
+/* The grid: layout only */
 .products {
   width: 100%;
   margin-top: 30px;
@@ -1172,7 +1384,12 @@ option:checked {
   position: relative;
 }
 
-.products .productItem {
+/* ============================================================
+   PRODUCT CARD (reusable)
+   Not tied to .products, so the card looks the same in the
+   product grid, the "might like" section, or anywhere else.
+   ============================================================ */
+.productItem {
   width: 100%;
   height: 330px;
   display: flex;
@@ -1181,9 +1398,10 @@ option:checked {
   background-color: white;
   box-shadow: var(--box-shadow--box);
   border-radius: 10px;
+  cursor: pointer;
 }
 
-.products .productItem .img {
+.productItem .img {
   width: 100%;
   height: 75%;
   border-radius: 10px;
@@ -1191,13 +1409,13 @@ option:checked {
   position: relative;
 }
 
-.products .productItem .img img {
+.productItem .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.products .productItem .img .addTocart {
+.productItem .img .addTocart {
   position: absolute;
   top: 0;
   left: 0;
@@ -1212,11 +1430,11 @@ option:checked {
   transition: all 0.3s ease;
 }
 
-.products .productItem:hover .addTocart {
+.productItem:hover .addTocart {
   opacity: 1;
 }
 
-.products .productItem .img .addTocart button {
+.productItem .img .addTocart button {
   padding: 10px 20px;
   border: none;
   border-radius: 99999px;
@@ -1227,12 +1445,12 @@ option:checked {
   transition: all 0.3s ease;
 }
 
-.products .productItem .img .addTocart button:hover {
+.productItem .img .addTocart button:hover {
   background-color: #000958;
   color: white;
 }
 
-.products .productItem .productItem_header {
+.productItem .productItem_header {
   width: 100%;
   height: 25%;
   padding: 10px;
@@ -1241,18 +1459,18 @@ option:checked {
   gap: 10px;
 }
 
-.products .productItem .productItem_header .productItem_title {
+.productItem .productItem_header .productItem_title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.products .productItem .productItem_header .productItem_title > i,
-.products .productItem .productItem_header .productItem_title > p {
+.productItem .productItem_header .productItem_title > i,
+.productItem .productItem_header .productItem_title > p {
   color: var(--text-color);
 }
 
-.products .productItem .productItem_header .price {
+.productItem .productItem_header .price {
   font-size: 1.2rem;
   color: var(--text-color);
   font-weight: 600;
@@ -1282,9 +1500,62 @@ option:checked {
 }
 
 /* ============================================================
-   MOBILE — every media query lives here, at the bottom,
-   so source order works in their favour.
+   MIGHT LIKE SECTION
    ============================================================ */
+.MightLike {
+  width: 100%;
+  min-height: 300px;
+  padding: 40px 5%;
+  background-color: rgb(255, 240, 225);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MightLike h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 40px 40px 70px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* No fixed height: the grid grows to fit the 330px cards */
+.MightLike .MightLikeProducts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-content: center;
+  gap: 1rem;
+}
+
+.MightLike .MightLikeProducts .productItem {
+  height: 350px;
+}
+/* ============================================================
+   MEDIA QUERIES
+   max-width queries go from LARGEST to SMALLEST, so the
+   smallest screen's rules come last and win.
+   ============================================================ */
+
+/* Down to laptops (max 1280px) */
+@media screen and (max-width: 1280px) {
+  .productPage .productMainContainer {
+    height: 500px;
+  }
+}
+
+/* Down to tablets (max 1024px) */
+@media screen and (max-width: 1024px) {
+  .productDescription{
+    padding: 10px;
+  }
+  .productPage .productMainContainer{
+    padding: 10px;
+  }
+}
+
+/* Mobile (max 768px) */
 @media screen and (max-width: 768px) {
   .Body-Container {
     width: 100%;
@@ -1396,7 +1667,7 @@ option:checked {
     margin-top: 40px;
   }
 
-  /* --- product page --- */
+  /* --- product grid filter bar --- */
   .productsGrid .FilterBar {
     flex-direction: column;
     gap: 20px;
@@ -1430,8 +1701,81 @@ option:checked {
     border-radius: 0;
   }
 
+  /* --- blog --- */
+  .blogs .blogArtic {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   /* --- footer --- */
   .footer .Footer-Container .footer-content {
+    grid-template-columns: 1fr;
     place-items: center;
+  }
+
+  .footer .footer-content .footerItem h4 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .footer .footer-content .footerItem a {
+    text-align: center;
+  }
+
+  /* --- product page --- */
+  .productPage {
+    height: auto;
+  }
+
+  .productPage .productMainContainer {
+    flex-direction: column;
+    border-radius: 0;
+    height: auto;
+  }
+
+  .productDescription {
+    width: 100%;
+  }
+
+  .ProductImgs {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "ProductMainImg"
+      "ProductSubImgs";
+    gap: 15px;
+  }
+
+  .ProductSubImgs {
+    flex-direction: row;
+  }
+
+  .ProductMainImg {
+    height: 300px;
+  }
+
+  /* --- might like --- */
+  .MightLike {
+    padding: 20px;
+  }
+
+  .MightLike .MightLikeProducts {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .MightLike .MightLikeProducts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    place-content: center;
+    gap: 1rem;
+  }
+  .UrlCON {
+    font-size: 12px;
+    padding-left: 5px;
   }
 }
