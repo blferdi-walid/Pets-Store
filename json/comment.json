@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Mikkel M.",
+    "rating": 5,
+    "title": "Great value",
+    "text": "The best value I could have imagined for the price paid. It's soft, big enough for my dog and the warming feature works well. My dog spends most of his day sleeping instead of tearing our furniture apart. Definitely would buy it again!",
+    "date": "2021-12-15"
+  },
+  {
+    "id": 2,
+    "name": "Lauren S.",
+    "rating": 5,
+    "title": "Totally love it!",
+    "text": "Would buy again. 10/10 Everything seems to be good.",
+    "date": "2021-12-15"
+  },
+  {
+    "id": 3,
+    "name": "Mikkel M.",
+    "rating": 5,
+    "title": "Great value",
+    "text": "The best value I could have imagined for the price paid. It's soft, big enough for my dog and the warming feature works well. My dog spends most of his day sleeping instead of tearing our furniture apart. Definitely would buy it again!",
+    "date": "2021-12-15"
+  },
+  {
+    "id": 4,
+    "name": "Lauren S.",
+    "rating": 5,
+    "title": "Totally love it!",
+    "text": "Would buy again. 10/10 Everything seems to be good.",
+    "date": "2021-12-15"
+  },
+  {
+    "id": 5,
+    "name": "Lauren S.",
+    "rating": 4,
+    "title": "Totally love it!",
+    "text": "I can't believe that we made Milos sleep in his own bed instead of ours. We are in love.",
+    "date": "2021-12-15"
+  }
+]

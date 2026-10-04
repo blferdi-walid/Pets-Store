@@ -1693,13 +1693,12 @@ start shoppin card degin
   font-size: 22px;
 }
 .PaymentInfoForm {
-  display: none;
+
   flex-direction: column;
   gap: 20px;
-  animation: all 0.5s ease-in;
 }
 .PaymentInfoForm.active {
-  display: flex !important;
+      display: flex !important;
 }
 .PaymentInfoForm h5 {
   color: white;
@@ -1795,9 +1794,10 @@ start shoppin card degin
   font-size: 16px;
   transition: all 0.3s ease;
 }
-.PaymentInfoForm .ContinuPaymentBtn:hover {
-  background-color: #141f81;
-}
+.PaymentInfoForm .ContinuPaymentBtn:hover{
+    background-color:#141f81
+
+} 
 .CardInfoEXp {
   display: flex;
   flex-direction: row;
@@ -1847,8 +1847,8 @@ start shoppin card degin
   color: white;
   border: 2px solid white;
 }
-#ConfirmPay {
-  background-color: rgb(2, 159, 227);
+#ConfirmPay{
+  background-color:rgb(2, 159, 227);
   border: none;
   font-weight: 600;
   box-shadow: var(--box-shadow--box);
@@ -1856,22 +1856,11 @@ start shoppin card degin
   padding: 15px;
   color: white;
   border-radius: 99999px;
-  font-size: 16px;
+  font-size: 16px
+
 }
-#ConfirmPay:hover {
-  background-color: rgb(1, 96, 137);
-}
-.titlePaymentStep2{
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-}
-.backHistory{
-  background-color: transparent;
-  font-weight: 600;
-  font-size: 18px;
-  color: white;
-  border: none;
+#ConfirmPay:hover{
+    background-color:rgb(1, 96, 137);
 
 }
 /* ============================================================
