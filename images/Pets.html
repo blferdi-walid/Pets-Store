@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0039)http://127.0.0.1:5500/shoppinCard.html? -->
+<!-- saved from url=(0043)http://127.0.0.1:5500/shoppinCard.html?cvv= -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     <header id="header">
       <div class="Nav-Left">
         <span class="logo">
-          <a href="http://127.0.0.1:5500/shoppinCard.html?"><i class="fa-solid fa-paw" aria-hidden="true"></i></a>
+          <a href="http://127.0.0.1:5500/shoppinCard.html?cvv="><i class="fa-solid fa-paw" aria-hidden="true"></i></a>
         </span>
       </div>
       <div class="Nav-Right">
@@ -24,13 +24,13 @@
           <ul class="Nav-Right-Links-text">
             <a href="http://127.0.0.1:5500/index.html">Home</a>
             <a href="http://127.0.0.1:5500/categories.html">Categories</a>
-            <a href="http://127.0.0.1:5500/shoppinCard.html?">Blog</a>
+            <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Blog</a>
             <a href="http://127.0.0.1:5500/Contact.html">Contact</a>
           </ul>
           <ul class="Nav-Right-Links-icons">
-            <a href="http://127.0.0.1:5500/shoppinCard.html?"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
-            <a href="http://127.0.0.1:5500/shoppinCard.html?"><i class="fa-solid fa-cart-arrow-down" aria-hidden="true"></i></a>
-            <a href="http://127.0.0.1:5500/shoppinCard.html?"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
+            <a href="http://127.0.0.1:5500/shoppinCard.html?cvv="><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
+            <a href="http://127.0.0.1:5500/shoppinCard.html" id="shoppingBtn"><i class="fa-solid fa-cart-arrow-down" aria-hidden="true"></i></a>
+            <a href="http://127.0.0.1:5500/shoppinCard.html?cvv="><i class="fa-solid fa-user" aria-hidden="true"></i></a>
           </ul>
         </div>
       </div>
@@ -38,6 +38,7 @@
     </header>
 
     <section class="shoppinCard">
+      <p class="UrlCON"><span class="lastSegmentURL">Shopping card </span><span class="sep"> / </span><span class="lastSegmentURL">Checkout step 2</span><span class="sep"> / </span><span class="lastSegmentURL">2</span></p>
       <div class="shoppinCardContainer">
         <div class="shoppinList">
           <h2>Shoppin Cart</h2>
@@ -123,9 +124,9 @@
           </div>
         </div>
 
-        <div class="PaymentInfo" id="PaymentInfo" data-current-page="1">
-          <form class="PaymentInfoForm " data-page="1">
-            <h5> Checkout step 1/2</h5>
+        <div class="PaymentInfo" id="PaymentInfo" data-current-page="2" data-max-page="2">
+          <form class="PaymentInfoForm" data-page="1">
+            <h5 class="checkoutInfoTittl-1"> Checkout step 1/2</h5>
             <h3>Shipping Info </h3>
             <div class="formChild">
               <div>
@@ -169,53 +170,59 @@
           </form> 
 
 
-          <!-- <form class="PaymentInfoForm"  data-page="2">
-            <h5> Checkout step 2/2</h5>
+          <form class="PaymentInfoForm active" data-page="2">
+            <h5 class="titlePaymentStep2 checkoutInfoTittl-2"> <button class="backHistory"> <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i> </button> Checkout step 2/2</h5>
             <h3>Payment Info </h3>
 
             <div class="paymentMethodsBtns">
-              <button id="CreditCardBtn" class="payment-btn" type="button">Credit Card</button>
+              <button id="CreditCardBtn" class="payment-btn active" type="button">Credit Card</button>
               <button id="PayPalBtn" class="payment-btn" type="button">Pay pal</button>
             </div>
-            <div>
-              <label for="Surname">Cardholder Name</label>
-              <input type="text">
-            </div>
-            <div>
-              <label>Card Number</label>
-              <input id="cardNumber" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19"
-                autocomplete="cc-number">
-            </div>
 
-            <div class="CardInfoEXp">
-              <div class="ExpirationDate">
-                <label>ExpirationDate:</label>
-                <div class="DateEXPInputs">
-                  <select id="MonthCardEXP">
-                    <option value="">MM</option>
-                  </select>
-                  <select id="YearCardEXP">
-                    <option value="">YYYY</option>
-                  </select>
+            <div id="CreditCardForm" class="paymentinputs">
+              <div>
+                <label for="Surname">Cardholder Name</label>
+                <input type="text">
+              </div>
+              <div>
+                <label>Card Number</label>
+                <input id="cardNumber" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number">
+              </div>
+  
+              <div class="CardInfoEXp">
+                <div class="ExpirationDate">
+                  <label>ExpirationDate:</label>
+                  <div class="DateEXPInputs">
+                    <select id="MonthCardEXP">
+                      <option value="">MM</option>
+                    </select>
+                    <select id="YearCardEXP">
+                      <option value="">YYYY</option>
+                    </select>
+                  </div>
                 </div>
+  
+                <div class="CVVCard">
+                  <label for="">CVV:</label>
+                  <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="123" maxlength="4" pattern="[0-9]{3,4}" autocomplete="cc-csc">
+                </div>
+  
               </div>
-
-              <div class="CVVCard">
-                <label for="">CVV:</label>
-                <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="123" maxlength="4"
-                  pattern="[0-9]{3,4}" autocomplete="cc-csc" required>
-              </div>
-
+  
+              <button id="ConfirmPay"> Confirm and pay $ 37.17 </button>
             </div>
 
-            <button id="ConfirmPay"> Confirm and pay $ 37.17 </button>
-          </form> -->
+
+            <div id="PaypalBtnForm" class="paymentinputs">
+                <button id="PaypalBTN"> Pay<span>pal</span> <i class="fa-brands fa-paypal" aria-hidden="true"></i></button>
+            </div>
+          </form> 
         </div>
 
 
     </div></section>
   </div>
-  <!-- End Contact  -->
+  <!-- End shoping  -->
   <div class="footer"><div class="footer">
         <div class="Footer-Container">
           <div class="footer-content">
@@ -224,29 +231,29 @@
             </div>
             <div class="footerItem">
               <h4>Company</h4>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">About Us</a>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">FAQ</a>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Contact</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">About Us</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">FAQ</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Contact</a>
             </div>
             <div class="footerItem">
               <h4>Legal</h4>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Privercy Policy</a>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Terms and Condition</a>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Cookie Policy</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Privercy Policy</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Terms and Condition</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Cookie Policy</a>
             </div>
             <div class="footerItem">
               <h4>help</h4>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Shipping and Delivery</a>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Returns Policy </a>
-              <a href="http://127.0.0.1:5500/shoppinCard.html?">Security and Payment</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Shipping and Delivery</a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Returns Policy </a>
+              <a href="http://127.0.0.1:5500/shoppinCard.html?cvv=">Security and Payment</a>
             </div>
             <div class="footerItem">
               <div class="footerItem">
 
                 <h4>Social</h4>
                 <div>
-                  <span><a href="http://127.0.0.1:5500/shoppinCard.html?"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></span>
-                  <span><a href="http://127.0.0.1:5500/shoppinCard.html?"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></span>
+                  <span><a href="http://127.0.0.1:5500/shoppinCard.html?cvv="><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></span>
+                  <span><a href="http://127.0.0.1:5500/shoppinCard.html?cvv="><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></span>
                 </div>
               </div>
             </div>

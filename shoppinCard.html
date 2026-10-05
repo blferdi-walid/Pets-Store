@@ -105,9 +105,9 @@
           </div>
         </div>
 
-        <div class="PaymentInfo" id="PaymentInfo" data-current-page="1"   data-max-page="2">
-          <form class="PaymentInfoForm active"  data-page="1" >
-            <h5 class="checkoutInfoTittl"> Checkout step 1/2</h5>
+        <div class="PaymentInfo" id="PaymentInfo" data-current-page="1" data-max-page="2">
+          <form class="PaymentInfoForm active" data-page="1">
+            <h5 class="checkoutInfoTittl-1"> Checkout step 1/2</h5>
             <h3>Shipping Info </h3>
             <div class="formChild">
               <div>
@@ -148,56 +148,65 @@
               <input type="checkbox"> <span>Use as bilingg address</span>
             </div>
             <button class="ContinuPaymentBtn"> Continue to Payment ></button>
-          </form> 
+          </form>
 
 
-          <form class="PaymentInfoForm"  data-page="2">
-            <h5 class="titlePaymentStep2 checkoutInfoTittl"> <button class="backHistory"> <i class="fa-solid fa-arrow-left-long"></i> </button> Checkout step 2/2</h5>
+          <form class="PaymentInfoForm" id="paymentMethodsBtns" data-page="2">
+            <h5 class="titlePaymentStep2 checkoutInfoTittl-2"> <button class="backHistory"> <i
+                  class="fa-solid fa-arrow-left-long"></i> </button> Checkout step 2/2</h5>
             <h3>Payment Info </h3>
 
             <div class="paymentMethodsBtns">
-              <button id="CreditCardBtn" class="payment-btn" type="button">Credit Card</button>
-              <button id="PayPalBtn" class="payment-btn" type="button">Pay pal</button>
-            </div>
-            <div>
-              <label for="Surname">Cardholder Name</label>
-              <input type="text">
-            </div>
-            <div>
-              <label>Card Number</label>
-              <input id="cardNumber" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19"
-                autocomplete="cc-number">
+              <button type="button" id="CreditCardBtn" class="payment-btn active" type="button">Credit Card</button>
+              <button type="button" id="PayPalBtn" class="payment-btn" type="button">Pay pal</button>
             </div>
 
-            <div class="CardInfoEXp">
-              <div class="ExpirationDate">
-                <label>ExpirationDate:</label>
-                <div class="DateEXPInputs">
-                  <select id="MonthCardEXP">
-                    <option value="">MM</option>
-                  </select>
-                  <select id="YearCardEXP">
-                    <option value="">YYYY</option>
-                  </select>
+            <div id="CreditCardForm" class="active paymentinputs">
+              <div>
+                <label for="Surname">Cardholder Name</label>
+                <input type="text">
+              </div>
+              <div>
+                <label>Card Number</label>
+                <input id="cardNumber" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19"
+                  autocomplete="cc-number">
+              </div>
+
+              <div class="CardInfoEXp">
+                <div class="ExpirationDate">
+                  <label>ExpirationDate:</label>
+                  <div class="DateEXPInputs">
+                    <select id="MonthCardEXP">
+                      <option value="">MM</option>
+                    </select>
+                    <select id="YearCardEXP">
+                      <option value="">YYYY</option>
+                    </select>
+                  </div>
                 </div>
+
+                <div class="CVVCard">
+                  <label for="">CVV:</label>
+                  <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="123" maxlength="4"
+                    pattern="[0-9]{3,4}" autocomplete="cc-csc">
+                </div>
+
               </div>
 
-              <div class="CVVCard">
-                <label for="">CVV:</label>
-                <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="123" maxlength="4"
-                  pattern="[0-9]{3,4}" autocomplete="cc-csc" >
-              </div>
-
+              <button id="ConfirmPay"> Confirm and pay $ 37.17 </button>
             </div>
 
-            <button id="ConfirmPay"> Confirm and pay $ 37.17 </button>
-          </form> 
-        </div>
 
+            <div id="PaypalBtnForm" class="paymentinputs">
+              <button type="button" id="PaypalBTN"> Pay<span>pal</span> <i class="fa-brands fa-paypal"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
 
     </section>
   </div>
-  <!-- End Contact  -->
+  <!-- End shoping  -->
   <div class="footer"></div>
   <script src="script.js"></script>
   <script src="https://kit.fontawesome.com/317f1d8d0e.js" crossorigin="anonymous"></script>

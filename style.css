@@ -1696,6 +1696,9 @@ start shoppin card degin
   display: none;
   flex-direction: column;
   gap: 20px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
   animation: all 0.5s ease-in;
 }
 .PaymentInfoForm.active {
@@ -1861,17 +1864,55 @@ start shoppin card degin
 #ConfirmPay:hover {
   background-color: rgb(1, 96, 137);
 }
-.titlePaymentStep2{
+.titlePaymentStep2 {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
-.backHistory{
+.backHistory {
   background-color: transparent;
   font-weight: 600;
   font-size: 18px;
   color: white;
   border: none;
+}
+
+#CreditCardForm {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+#CreditCardForm.active{
+  display: flex;
+}
+#PaypalBtnForm {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#PaypalBtnForm.active{
+  display: flex;
+}
+#PaypalBtnForm #PaypalBTN {
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(255, 209, 64);
+  font-size: 18px;
+  color: rgb(1, 28, 100);
+  font-weight: 600;
+  border: none;
+  border-radius: 999999px;
+  box-shadow: var(--box-shadow--box);
+  transition: all 0.3s ease-in;
+
+}
+#PaypalBtnForm #PaypalBTN span {
+  color: rgb(1, 112, 224);
+}
+#PaypalBtnForm #PaypalBTN:hover{
+    background-color: rgb(255, 227, 134);
 
 }
 /* ============================================================

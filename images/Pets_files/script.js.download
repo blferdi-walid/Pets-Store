@@ -2726,7 +2726,7 @@ const header = `
           </ul>
           <ul class="Nav-Right-Links-icons" >
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a href=""><i class="fa-solid fa-cart-arrow-down"></i></a>
+            <a href="shoppinCard.html" id="shoppingBtn"><i class="fa-solid fa-cart-arrow-down" ></i></a>
             <a href=""><i class="fa-solid fa-user"></i></a>
           </ul>
         </div>
@@ -2743,6 +2743,8 @@ if (headerId) {
     link.textContent = link.textContent.toUpperCase();
   });
 }
+
+
 
 // end import header
 
@@ -3041,7 +3043,7 @@ function productDetailHTML(item) {
             </div>
           </div>
           <div class="Add-ToCard" > 
-            <button class="Add-ToCardBtn" >Add to cart</button>
+            <button class="Add-ToCardBtn" id="AddToCardBtn" >Add to cart</button>
             <a href=""><i class="fa-solid fa-heart"></i></a>
           </div>
 
@@ -3144,6 +3146,16 @@ function mightLikeItems(category) {
   MightLikeProductscontainer.innerHTML = items.length
     ? items.map(productCardHTML).slice(0, 4).join("")
     : `<p>No products in this category.</p>`;
+}
+
+const AddToCardBtn  = document.getElementById('AddToCardBtn')
+
+if(AddToCardBtn){
+
+  AddToCardBtn.addEventListener('click',()=>{
+    location.href = `shoppinCard.html`;
+    
+  })
 }
 
 function router() {
@@ -3337,55 +3349,70 @@ if (paymentMethods) {
   });
 }
 
+
+
 class paymentPagesSteps {
   constructor(formId) {
     this.form = document.getElementById(formId);
     this.pages = this.form.querySelectorAll(".PaymentInfoForm");
     this.confirmeButton = this.form.querySelector("#ConfirmPay");
     this.continueButton = this.form.querySelector(".ContinuPaymentBtn");
+    this.backHistory = this.form.querySelector(".backHistory");
     this.initializeButton(this.continueButton, this.confirmeButton);
   }
   //method that enable pagination
 
-  initializeButton(continueButton, confirmeButton) {
+  initializeButton(continueButton, confirmeButton,backHistory) {
     if (!continueButton) return;
     continueButton.addEventListener("click", (e) => {
       e.preventDefault();
 
       //get Current page
-      const currentPage = Number(this.form.dataset.currentPage);
-      this.getCurrentPage(currentPage);
+      const currentPage = this.getCurrentPage();
+      console.log(currentPage);
+      // go to page current + 1
+      this.goToPage(currentPage + 1);
 
-      // go to current page +1
+
+
+      Urlrender("checkoutInfoTittl-2")
+
+
+      
     });
+
     if (!confirmeButton) return;
     confirmeButton.addEventListener("click", (e) => {
       e.preventDefault();
-      const currentPage = Number(this.form.dataset.currentPage);
-      this.getCurrentPage(currentPage + 1);
+    });
+
+    backHistory?.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      //get Current page
+      const currentPage = this.getCurrentPage();
+      console.log(currentPage);
+      // go to page current + 1
+      this.goToPage(currentPage - 1);
     });
   }
+
   getCurrentPage() {
     const currentPage = this.form.dataset.currentPage;
-    console.log(data);
-    if (!currentPage) return Number(currentPage);
+    return currentPage ? Number(currentPage) : 1;
   }
+
   getMaxPage() {
     const maxPage = this.form.dataset.maxPage;
     // test that the var exists
-    if (!maxPage) return Number(maxPage);
+    return Number(maxPage);
   }
   goToPage(targetPage) {
-    // does page exist?
-    if (targetPage > this.maxPage || targetPage < 1)
-      console.error("page not found");
-
-    // go to page
     this.pages.forEach((page) => {
       // hide page
       this.hidePage(page);
       // page is target page => show page
-      const currentPageNumber = parseInt(page.dataset.page, 10);
+      const currentPageNumber = Number(page.dataset.page);
       currentPageNumber === targetPage && this.showPage(page);
 
       // update form dataset
@@ -3393,11 +3420,51 @@ class paymentPagesSteps {
     });
   }
   hidePage(page) {
-    page.classList.contains("active") && page.classList.remove("active");
+    page.classList.remove("active");
   }
   showPage(page) {
-    !page.classList.contains("active") && page.classList.add("active");
+    page.classList.add("active");
   }
 }
 
 new paymentPagesSteps("PaymentInfo");
+
+
+
+const Urlrender =(Titel) =>{
+  const urlSegments = document.querySelector(".UrlCON");
+  const checkoutInfoTittl = document.querySelector(`.${Titel}`);
+
+  if (urlSegments) {
+    urlSegments.textContent = `Shopping card /${checkoutInfoTittl.textContent.trim()}`;
+    const text = urlSegments.textContent;
+    const urlSplt = text.split("/");
+    urlSegments.innerHTML = urlSplt
+    .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
+    .join(`<span class="sep"> / </span>`);
+  }
+
+}
+Urlrender("checkoutInfoTittl-1")
+
+
+
+class paymentSwitch {
+  constructor(){
+    this.form = document.getElementById("paymentinputs")
+    this.form = document.getElementById("PaypalBtnForm")
+    this.form = document.getElementById("paymentinputs")
+    this.paypal = document.getElementById('PayPalBtn')
+    this.creditCard = document.getElementById('CreditCardBtn')
+  }
+  initializePaymentButton(){
+
+  }
+  handelPaypal(){
+
+  }
+  handelcreditCard(){
+
+  }
+
+}

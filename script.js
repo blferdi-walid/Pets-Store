@@ -3043,7 +3043,7 @@ function productDetailHTML(item) {
             </div>
           </div>
           <div class="Add-ToCard" > 
-            <button class="Add-ToCardBtn" >Add to cart</button>
+            <button class="Add-ToCardBtn" id="AddToCardBtn" >Add to cart</button>
             <a href=""><i class="fa-solid fa-heart"></i></a>
           </div>
 
@@ -3146,6 +3146,16 @@ function mightLikeItems(category) {
   MightLikeProductscontainer.innerHTML = items.length
     ? items.map(productCardHTML).slice(0, 4).join("")
     : `<p>No products in this category.</p>`;
+}
+
+const AddToCardBtn  = document.getElementById('AddToCardBtn')
+
+if(AddToCardBtn){
+
+  AddToCardBtn.addEventListener('click',()=>{
+    location.href = `shoppinCard.html`;
+    
+  })
 }
 
 function router() {
@@ -3362,6 +3372,13 @@ class paymentPagesSteps {
       console.log(currentPage);
       // go to page current + 1
       this.goToPage(currentPage + 1);
+
+
+
+      Urlrender("checkoutInfoTittl-2")
+
+
+      
     });
 
     if (!confirmeButton) return;
@@ -3369,7 +3386,7 @@ class paymentPagesSteps {
       e.preventDefault();
     });
 
-    backHistory.addEventListener("click", (e) => {
+    backHistory?.addEventListener("click", (e) => {
       e.preventDefault();
 
       //get Current page
@@ -3414,17 +3431,58 @@ new paymentPagesSteps("PaymentInfo");
 
 
 
-if(location.pathname === "shoppinCard"){
-
-  const urlSegments = shoppinCard.querySelector(".UrlCON");
-  const checkoutInfoTittl = shoppinCard.querySelector(".checkoutInfoTittl");
+const Urlrender =(Titel) =>{
+  const urlSegments = document.querySelector(".UrlCON");
+  const checkoutInfoTittl = document.querySelector(`.${Titel}`);
 
   if (urlSegments) {
-    urlSegments.textContent = `Shopping card /${checkoutInfoTittl}`;
+    urlSegments.textContent = `Shopping card /${checkoutInfoTittl.textContent.trim()}`;
     const text = urlSegments.textContent;
     const urlSplt = text.split("/");
     urlSegments.innerHTML = urlSplt
     .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
     .join(`<span class="sep"> / </span>`);
   }
+
 }
+Urlrender("checkoutInfoTittl-1")
+
+
+
+class paymentSwitch {
+  constructor(PaymentInfoForm){
+    this.form = document.getElementById(PaymentInfoForm)
+    if (!this.form) return;
+    this.CreditCardForm = this?.form.querySelector("#CreditCardForm")
+    this.PaypalBtnForm = this.form.querySelector("#PaypalBtnForm")
+    this.paypal = this.form.querySelector('#PayPalBtn')
+    this.creditCard = this.form.querySelector('#CreditCardBtn')
+    this.initializePaymentButton(this.creditCard,this.paypal)
+  }
+  initializePaymentButton(creditCard,paypal){
+    console.log("form:", this.form);
+    const CreditCardForm = this.CreditCardForm
+    const PaypalBtnForm = this.PaypalBtnForm
+    if(creditCard){
+      creditCard.addEventListener('click',(e)=>{
+          e.preventDefault()
+        CreditCardForm.classList.add('active')              
+        PaypalBtnForm.classList.remove('active')              
+
+      })
+    }
+    if(paypal){
+      paypal.addEventListener('click',(e)=>{
+          e.preventDefault()
+        PaypalBtnForm.classList.add('active')              
+        CreditCardForm.classList.remove('active')              
+
+      })
+    }
+
+  }
+
+
+}
+
+new paymentSwitch("paymentMethodsBtns")
