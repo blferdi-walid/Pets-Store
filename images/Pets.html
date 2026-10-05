@@ -3,12 +3,12 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="./Pets_files/css2" rel="stylesheet">
-  <link rel="stylesheet" href="./Pets_files/style.css">
+  
+  
+  
+  
   <title>Pets</title>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./Pets_files/css2" rel="stylesheet"><link rel="stylesheet" href="./Pets_files/style.css"></head>
 
 <body>
   <div class="Body-Container">
@@ -38,7 +38,7 @@
     </header>
 
     <section class="shoppinCard">
-      <p class="UrlCON"><span class="lastSegmentURL">Shopping card </span><span class="sep"> / </span><span class="lastSegmentURL">Checkout step 2</span><span class="sep"> / </span><span class="lastSegmentURL">2</span></p>
+      <p class="UrlCON"><span class="lastSegmentURL">Shopping card </span><span class="sep"> / </span><span class="lastSegmentURL">Checkout step 1</span><span class="sep"> / </span><span class="lastSegmentURL">2</span></p>
       <div class="shoppinCardContainer">
         <div class="shoppinList">
           <h2>Shoppin Cart</h2>
@@ -124,8 +124,8 @@
           </div>
         </div>
 
-        <div class="PaymentInfo" id="PaymentInfo" data-current-page="2" data-max-page="2">
-          <form class="PaymentInfoForm" data-page="1">
+        <div class="PaymentInfo" id="PaymentInfo" data-current-page="1" data-max-page="2">
+          <form class="PaymentInfoForm active" data-page="1">
             <h5 class="checkoutInfoTittl-1"> Checkout step 1/2</h5>
             <h3>Shipping Info </h3>
             <div class="formChild">
@@ -167,19 +167,19 @@
               <input type="checkbox"> <span>Use as bilingg address</span>
             </div>
             <button class="ContinuPaymentBtn"> Continue to Payment &gt;</button>
-          </form> 
+          </form>
 
 
-          <form class="PaymentInfoForm active" data-page="2">
+          <form class="PaymentInfoForm" id="paymentMethodsBtns" data-page="2">
             <h5 class="titlePaymentStep2 checkoutInfoTittl-2"> <button class="backHistory"> <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i> </button> Checkout step 2/2</h5>
             <h3>Payment Info </h3>
 
             <div class="paymentMethodsBtns">
-              <button id="CreditCardBtn" class="payment-btn active" type="button">Credit Card</button>
-              <button id="PayPalBtn" class="payment-btn" type="button">Pay pal</button>
+              <button type="button" id="CreditCardBtn" class="payment-btn active">Credit Card</button>
+              <button type="button" id="PayPalBtn" class="payment-btn">Pay pal</button>
             </div>
 
-            <div id="CreditCardForm" class="paymentinputs">
+            <div id="CreditCardForm" class="active paymentinputs">
               <div>
                 <label for="Surname">Cardholder Name</label>
                 <input type="text">
@@ -188,7 +188,7 @@
                 <label>Card Number</label>
                 <input id="cardNumber" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number">
               </div>
-  
+
               <div class="CardInfoEXp">
                 <div class="ExpirationDate">
                   <label>ExpirationDate:</label>
@@ -201,26 +201,26 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="CVVCard">
                   <label for="">CVV:</label>
                   <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="123" maxlength="4" pattern="[0-9]{3,4}" autocomplete="cc-csc">
                 </div>
-  
+
               </div>
-  
+
               <button id="ConfirmPay"> Confirm and pay $ 37.17 </button>
             </div>
 
 
             <div id="PaypalBtnForm" class="paymentinputs">
-                <button id="PaypalBTN"> Pay<span>pal</span> <i class="fa-brands fa-paypal" aria-hidden="true"></i></button>
+              <button type="button" id="PaypalBTN"> Pay<span>pal</span> <i class="fa-brands fa-paypal" aria-hidden="true"></i></button>
             </div>
-          </form> 
+          </form>
         </div>
+      </div>
 
-
-    </div></section>
+    </section>
   </div>
   <!-- End shoping  -->
   <div class="footer"><div class="footer">

@@ -1561,12 +1561,13 @@ start shoppin card degin
 
 .shoppinCard {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 30px;
 }
 .shoppinCardContainer {
   width: 100%;
-  height: 500px;
-  margin-top: 80px;
+  /* height: 500px; */
+  margin-top: 50px;
   display: grid;
   grid-template-areas: "shoppinList shoppinList shoppinList PaymentInfo";
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
@@ -1577,6 +1578,7 @@ start shoppin card degin
   background-color: var(--text-color);
   border-radius: 20px;
   padding: 20px;
+  min-width: 360px;
   box-shadow: var(--box-shadow--box);
 }
 .shoppinList {
@@ -1936,6 +1938,15 @@ start shoppin card degin
   .productPage .productMainContainer {
     padding: 10px;
   }
+
+  .shoppinCard {
+  
+    margin-bottom: 60px;
+}
+.shoppinCardContainer{
+  display: flex;
+  flex-direction: column;
+}
 }
 
 /* Mobile (max 768px) */
@@ -2160,5 +2171,17 @@ start shoppin card degin
   .UrlCON {
     font-size: 12px;
     padding-left: 5px;
+  }
+  .shoppinCardContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .shoppinList{
+    overflow-x: scroll;
+    border-radius: 0%;
+  }
+  .PaymentInfo{
+        border-radius: 0%;
+
   }
 }

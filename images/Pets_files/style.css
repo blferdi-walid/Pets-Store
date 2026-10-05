@@ -1566,7 +1566,7 @@ start shoppin card degin
 .shoppinCardContainer {
   width: 100%;
   height: 500px;
-  margin-top: 80px;
+  margin-top: 20px;
   display: grid;
   grid-template-areas: "shoppinList shoppinList shoppinList PaymentInfo";
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
@@ -1882,12 +1882,18 @@ start shoppin card degin
   flex-direction: column;
   gap: 20px;
 }
+#CreditCardForm.active{
+  display: flex;
+}
 #PaypalBtnForm {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+}
+#PaypalBtnForm.active{
+  display: flex;
 }
 #PaypalBtnForm #PaypalBTN {
   width: 100%;
@@ -1930,6 +1936,11 @@ start shoppin card degin
   .productPage .productMainContainer {
     padding: 10px;
   }
+
+  .shoppinCard {
+  
+    margin-bottom: 60px;
+}
 }
 
 /* Mobile (max 768px) */

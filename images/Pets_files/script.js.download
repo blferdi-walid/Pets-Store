@@ -3450,21 +3450,39 @@ Urlrender("checkoutInfoTittl-1")
 
 
 class paymentSwitch {
-  constructor(){
-    this.form = document.getElementById("paymentinputs")
-    this.form = document.getElementById("PaypalBtnForm")
-    this.form = document.getElementById("paymentinputs")
-    this.paypal = document.getElementById('PayPalBtn')
-    this.creditCard = document.getElementById('CreditCardBtn')
+  constructor(PaymentInfoForm){
+    this.form = document.getElementById(PaymentInfoForm)
+    if (!this.form) return;
+    this.CreditCardForm = this?.form.querySelector("#CreditCardForm")
+    this.PaypalBtnForm = this.form.querySelector("#PaypalBtnForm")
+    this.paypal = this.form.querySelector('#PayPalBtn')
+    this.creditCard = this.form.querySelector('#CreditCardBtn')
+    this.initializePaymentButton(this.creditCard,this.paypal)
   }
-  initializePaymentButton(){
+  initializePaymentButton(creditCard,paypal){
+    console.log("form:", this.form);
+    const CreditCardForm = this.CreditCardForm
+    const PaypalBtnForm = this.PaypalBtnForm
+    if(creditCard){
+      creditCard.addEventListener('click',(e)=>{
+          e.preventDefault()
+        CreditCardForm.classList.add('active')              
+        PaypalBtnForm.classList.remove('active')              
+
+      })
+    }
+    if(paypal){
+      paypal.addEventListener('click',(e)=>{
+          e.preventDefault()
+        PaypalBtnForm.classList.add('active')              
+        CreditCardForm.classList.remove('active')              
+
+      })
+    }
 
   }
-  handelPaypal(){
 
-  }
-  handelcreditCard(){
-
-  }
 
 }
+
+new paymentSwitch("paymentMethodsBtns")
