@@ -1533,13 +1533,15 @@ option:checked {
 
 .ReviewsSection {
   width: 90%;
+  min-height: 90vh;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 60px 0;
   display: grid;
-  grid-template-areas: "Rating Reviews Reviews";
-  row-gap: 24px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "Rating Reviews";
   column-gap: 60px;
-  align-content: start;
+  row-gap: 24px;
+  align-items: start;
 }
 
 .Rating {
@@ -1548,9 +1550,115 @@ option:checked {
 .Reviews {
   grid-area: Reviews;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+}
+.ReviewHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 20px;
+  box-shadow: var(--box-shadow--box);
+}
+.ReviewHeader h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.slideReviewIcons{
+  display: flex;
+  gap: 20px;
+  
+}
+.slideReviewIcons i{
+  color: var(--text-color);
+}
+
+.Rating h3 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 20px;
+  box-shadow: var(--box-shadow--box);
+  font-size: 20px;
+  font-weight: 500;
+}
+.ReviewsContainer {
+  flex: 1;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0;
+  gap: 20px;
+}
+.ReviewsContainer .reviewLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviewCard {
+  width: 100%;
+  max-height: 250px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--box-shadow--box);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ReviewCardHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ReviewCardHead .stars i {
+  color: orangered;
+}
+.ReviewCardUser span {
+  color: gray;
+  font-size: 16px;
+}
+.ReviewCardUser h4 {
+  color: var(--text-color);
+}
+
+.reviewCard .ReviewComment {
+  font-size: 14px;
+  color: var(--text-color);
+}
+.reviewCard .date {
+  color: gray;
+  font-size: 14px;
+}
+
+.ReviewsContainer .reviewRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* ==========================
@@ -1884,7 +1992,7 @@ start shoppin card degin
   flex-direction: column;
   gap: 20px;
 }
-#CreditCardForm.active{
+#CreditCardForm.active {
   display: flex;
 }
 #PaypalBtnForm {
@@ -1894,7 +2002,7 @@ start shoppin card degin
   justify-content: center;
   align-items: center;
 }
-#PaypalBtnForm.active{
+#PaypalBtnForm.active {
   display: flex;
 }
 #PaypalBtnForm #PaypalBTN {
@@ -1908,15 +2016,14 @@ start shoppin card degin
   border-radius: 999999px;
   box-shadow: var(--box-shadow--box);
   transition: all 0.3s ease-in;
-
 }
 #PaypalBtnForm #PaypalBTN span {
   color: rgb(1, 112, 224);
 }
-#PaypalBtnForm #PaypalBTN:hover{
-    background-color: rgb(255, 227, 134);
-
+#PaypalBtnForm #PaypalBTN:hover {
+  background-color: rgb(255, 227, 134);
 }
+
 /* ============================================================
    MEDIA QUERIES
    max-width queries go from LARGEST to SMALLEST, so the
@@ -1940,13 +2047,12 @@ start shoppin card degin
   }
 
   .shoppinCard {
-  
     margin-bottom: 60px;
-}
-.shoppinCardContainer{
-  display: flex;
-  flex-direction: column;
-}
+  }
+  .shoppinCardContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Mobile (max 768px) */
@@ -2172,16 +2278,15 @@ start shoppin card degin
     font-size: 12px;
     padding-left: 5px;
   }
-  .shoppinCardContainer{
+  .shoppinCardContainer {
     display: flex;
     flex-direction: column;
   }
-  .shoppinList{
+  .shoppinList {
     overflow-x: scroll;
     border-radius: 0%;
   }
-  .PaymentInfo{
-        border-radius: 0%;
-
+  .PaymentInfo {
+    border-radius: 0%;
   }
 }
