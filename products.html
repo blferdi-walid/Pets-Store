@@ -32,6 +32,38 @@
   <div class="ReviewsSection">
     <div class="Rating ">
       <h3><i class="fa-solid fa-paw"></i> Rating</h3>
+      <div class="RatingContainer">
+        <div class="RatingCard">
+          <div class="headerRatingCard">
+            <h1>4.8 <span>/5</span></h1>
+            <span class="starsRatingCard"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+            <span class="ratingNumber">32 rating</span>
+          </div>
+
+          <div class="DisplayPercentageRatingContainer">
+
+          </div>
+        </div>
+        <div class="filterRating">
+          <select name="SortedBy" id="SortedBy">
+            <option value="Sorted-by" > Sorted by</option>
+          </select>
+          <select name="" id="">
+            <option value="allTypes">(images,text)</option>
+            <option value="image">images</option>
+            <option value="text">text</option>
+          </select>
+          <select name="Stars" id="">
+            <option value="one" disabled>specific star rating</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+          </select>
+
+        </div>
+      </div>
     </div>
 
     <div class=" Reviews ">
@@ -143,8 +175,8 @@
           </div>
         </div>
       </div>
-      <div class="LoadingMoreReviews">
-        <button id="lodingMoreReviwes"> Loading More</button>
+      <div class="LoadMoreSection">
+        <button id="lodingMoreReviwes " class="LoadMore"> Loading More</button>
       </div>
 
     </div>

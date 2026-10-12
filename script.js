@@ -2744,8 +2744,6 @@ if (headerId) {
   });
 }
 
-
-
 // end import header
 
 // start import footer
@@ -2878,7 +2876,7 @@ function productPageHTML() {
           </div>
           <div class="products"></div>
           <div class="LoadMoreSection">
-            <button id="LoadMore">Load more</button>
+            <button id="LoadMore" class="LoadMore">Load more</button>
           </div>
         </div>
       </div>
@@ -3148,14 +3146,12 @@ function mightLikeItems(category) {
     : `<p>No products in this category.</p>`;
 }
 
-const AddToCardBtn  = document.getElementById('AddToCardBtn')
+const AddToCardBtn = document.getElementById("AddToCardBtn");
 
-if(AddToCardBtn){
-
-  AddToCardBtn.addEventListener('click',()=>{
+if (AddToCardBtn) {
+  AddToCardBtn.addEventListener("click", () => {
     location.href = `shoppinCard.html`;
-    
-  })
+  });
 }
 
 function router() {
@@ -3349,20 +3345,18 @@ if (paymentMethods) {
   });
 }
 
-
-
 class paymentPagesSteps {
   constructor(formId) {
     this.form = document.getElementById(formId);
-    this.pages = this.form.querySelectorAll(".PaymentInfoForm");
-    this.confirmeButton = this.form.querySelector("#ConfirmPay");
-    this.continueButton = this.form.querySelector(".ContinuPaymentBtn");
-    this.backHistory = this.form.querySelector(".backHistory");
+    this.pages = this.form?.querySelectorAll(".PaymentInfoForm");
+    this.confirmeButton = this.form?.querySelector("#ConfirmPay");
+    this.continueButton = this.form?.querySelector(".ContinuPaymentBtn");
+    this.backHistory = this.form?.querySelector(".backHistory");
     this.initializeButton(this.continueButton, this.confirmeButton);
   }
   //method that enable pagination
 
-  initializeButton(continueButton, confirmeButton,backHistory) {
+  initializeButton(continueButton, confirmeButton, backHistory) {
     if (!continueButton) return;
     continueButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -3373,12 +3367,7 @@ class paymentPagesSteps {
       // go to page current + 1
       this.goToPage(currentPage + 1);
 
-
-
-      Urlrender("checkoutInfoTittl-2")
-
-
-      
+      Urlrender("checkoutInfoTittl-2");
     });
 
     if (!confirmeButton) return;
@@ -3429,60 +3418,95 @@ class paymentPagesSteps {
 
 new paymentPagesSteps("PaymentInfo");
 
-
-
-const Urlrender =(Titel) =>{
+const Urlrender = (Titel) => {
   const urlSegments = document.querySelector(".UrlCON");
   const checkoutInfoTittl = document.querySelector(`.${Titel}`);
 
   if (urlSegments) {
-    urlSegments.textContent = `Shopping card /${checkoutInfoTittl.textContent.trim()}`;
+    urlSegments.textContent = `Shopping card /${checkoutInfoTittl?.textContent.trim()}`;
     const text = urlSegments.textContent;
     const urlSplt = text.split("/");
     urlSegments.innerHTML = urlSplt
-    .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
-    .join(`<span class="sep"> / </span>`);
+      .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
+      .join(`<span class="sep"> / </span>`);
   }
-
-}
-Urlrender("checkoutInfoTittl-1")
-
-
+};
+Urlrender("checkoutInfoTittl-1");
 
 class paymentSwitch {
-  constructor(PaymentInfoForm){
-    this.form = document.getElementById(PaymentInfoForm)
+  constructor(PaymentInfoForm) {
+    this.form = document.getElementById(PaymentInfoForm);
     if (!this.form) return;
-    this.CreditCardForm = this?.form.querySelector("#CreditCardForm")
-    this.PaypalBtnForm = this.form.querySelector("#PaypalBtnForm")
-    this.paypal = this.form.querySelector('#PayPalBtn')
-    this.creditCard = this.form.querySelector('#CreditCardBtn')
-    this.initializePaymentButton(this.creditCard,this.paypal)
+    this.CreditCardForm = this?.form.querySelector("#CreditCardForm");
+    this.PaypalBtnForm = this.form.querySelector("#PaypalBtnForm");
+    this.paypal = this.form.querySelector("#PayPalBtn");
+    this.creditCard = this.form.querySelector("#CreditCardBtn");
+    this.initializePaymentButton(this.creditCard, this.paypal);
   }
-  initializePaymentButton(creditCard,paypal){
+  initializePaymentButton(creditCard, paypal) {
     console.log("form:", this.form);
-    const CreditCardForm = this.CreditCardForm
-    const PaypalBtnForm = this.PaypalBtnForm
-    if(creditCard){
-      creditCard.addEventListener('click',(e)=>{
-          e.preventDefault()
-        CreditCardForm.classList.add('active')              
-        PaypalBtnForm.classList.remove('active')              
-
-      })
+    const CreditCardForm = this.CreditCardForm;
+    const PaypalBtnForm = this.PaypalBtnForm;
+    if (creditCard) {
+      creditCard.addEventListener("click", (e) => {
+        e.preventDefault();
+        CreditCardForm.classList.add("active");
+        PaypalBtnForm.classList.remove("active");
+      });
     }
-    if(paypal){
-      paypal.addEventListener('click',(e)=>{
-          e.preventDefault()
-        PaypalBtnForm.classList.add('active')              
-        CreditCardForm.classList.remove('active')              
-
-      })
+    if (paypal) {
+      paypal.addEventListener("click", (e) => {
+        e.preventDefault();
+        PaypalBtnForm.classList.add("active");
+        CreditCardForm.classList.remove("active");
+      });
     }
-
   }
-
-
 }
 
-new paymentSwitch("paymentMethodsBtns")
+new paymentSwitch("paymentMethodsBtns");
+
+const RatingArray = [
+  {
+    stars: 5,
+    number: 17,
+  },
+  {
+    stars: 4,
+    number: 4,
+  },
+  {
+    stars: 3,
+    number: 3,
+  },
+  {
+    stars: 2,
+    number: 8,
+  },
+
+  {
+    stars: 1,
+    number: 0,
+  },
+];
+
+const DisplayPercentageRatingContainer = document.querySelector(
+  ".DisplayPercentageRatingContainer",
+);
+
+console.log(DisplayPercentageRatingContainer);
+
+const starRating = `<i class="fa-solid fa-star"></i>`;
+
+RatingArray.map((s) => {
+  const DisplayPercentage = document.createElement("div");
+  DisplayPercentage.classList.add("DisplayPercentage");
+
+  DisplayPercentage.innerHTML = `<span>${s.stars} ${starRating}</span>
+                <div class="pecantgeRatingNumberStars">
+                  <div style="width: ${(s.number / 32) * 100}%;"></div>
+                </div>
+                <span>${s.number}</span>`;
+
+  DisplayPercentageRatingContainer.appendChild(DisplayPercentage);
+});
