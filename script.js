@@ -3348,9 +3348,11 @@ if (paymentMethods) {
 class paymentPagesSteps {
   constructor(formId) {
     this.form = document.getElementById(formId);
-    this.pages = this.form?.querySelectorAll(".PaymentInfoForm");
+    this.pages = this.form?.querySelectorAll(".Peyform");
+    this.cart = document.querySelector(".shoppinList");
+    this.cart2 = document.querySelector(".OrderConfirmation");
     this.confirmeButton = this.form?.querySelector("#ConfirmPay");
-    this.continueButton = this.form?.querySelector(".ContinuPaymentBtn");
+    this.continueButton = this.form?.querySelector("#ContinuPaymentBtn");
     this.backHistory = this.form?.querySelector(".backHistory");
     this.initializeButton(this.continueButton, this.confirmeButton);
   }
@@ -3373,6 +3375,21 @@ class paymentPagesSteps {
     if (!confirmeButton) return;
     confirmeButton.addEventListener("click", (e) => {
       e.preventDefault();
+      this.goToPage(3);
+      this.cart?.classList.remove("active"); // hide the cart
+      this.cart2?.classList.add("active"); // hide the cart
+      this.confirmation?.classList.add("active");
+
+      const urlSegments = document.querySelector(".UrlCON");
+
+      if (urlSegments) {
+        urlSegments.textContent = `Shopping card /Order summary`;
+        const text = urlSegments.textContent;
+        const urlSplt = text.split("/");
+        urlSegments.innerHTML = urlSplt
+          .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
+          .join(`<span class="sep"> / </span>`);
+      }
     });
 
     backHistory?.addEventListener("click", (e) => {
@@ -3508,5 +3525,5 @@ RatingArray.map((s) => {
                 </div>
                 <span>${s.number}</span>`;
 
-  DisplayPercentageRatingContainer.appendChild(DisplayPercentage);
+  DisplayPercentageRatingContainer?.appendChild(DisplayPercentage);
 });

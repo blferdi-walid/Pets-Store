@@ -1857,29 +1857,120 @@ start shoppin card degin
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   vertical-align: middle;
+  text-align: left;
 }
 
-.cardItemImgSection {
+/* totals */
+#cartTable tfoot td {
+  padding: 8px;
+}
+
+#cartTable tfoot .label {
+  font-weight: 700;
+}
+
+#cartTable tfoot p {
+  margin: 6px 0;
+}
+#cartTable .cardItemImgSection {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-
-.cardItemImgSection img {
   width: 66px;
   height: 66px;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
-.cardItemImgSection h3 {
+#cartTable .cardItemImgSection img {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#cartTable .cardItemImgSection h3 {
   margin: 0;
   font-size: 15px;
 }
 
-.cardItemImgSection span {
+#cartTable .cardItemImgSection span {
   color: #aaa;
   font-size: 13px;
+}
+#OrderSummaryTable {
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+  border-collapse: collapse;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+#OrderSummaryTable th {
+  text-align: left;
+  font-weight: 500;
+  color: white;
+  padding: 12px 8px;
+}
+
+#OrderSummaryTable tbody {
+  border-bottom: 1px solid #ccc;
+  vertical-align: middle;
+  overflow-y: scroll;
+}
+#OrderSummaryTable tbody tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+#OrderSummaryTable .cardItemImgSection {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+  width: 66px;
+  height: 66px;
+}
+#OrderSummaryTable .cardItemImgSection img {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+#OrderSummaryTable .cardItemImgSection h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+#OrderSummaryTable .cardItemImgSection span {
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* totals */
+#OrderSummaryTable tfoot {
+  width: 100%;
+}
+#OrderSummaryTable tfoot tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0px;
+}
+#OrderSummaryTable tfoot tr:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+#OrderSummaryTable tfoot .label {
+  font-weight: 700;
+}
+
+#OrderSummaryTable tfoot p {
+  margin: 10px 0;
+}
+#OrderSummaryTable tfoot .priceOrder {
+  text-align: right;
 }
 
 /* rounded size select and quantity input */
@@ -1910,41 +2001,27 @@ start shoppin card degin
   color: #000958;
 }
 
-#cartTable td {
-  text-align: left;
-}
-/* totals */
-#cartTable tfoot td {
-  padding: 8px;
-}
-
-#cartTable tfoot .label {
-  font-weight: 700;
-}
-
-#cartTable tfoot p {
-  margin: 6px 0;
-}
-
 /* line above Total, only from the Quantity column to the end */
 .totalRow td:not(:first-child) {
   border-top: 1px solid #8a8fc4;
-  padding-top: 20px;
+  height: 70px;
 }
 
 .totalPrice {
   font-size: 22px;
 }
 .PaymentInfoForm {
-  display: none;
   flex-direction: column;
   gap: 20px;
   padding: 10px;
   width: 100%;
   height: 100%;
-  animation: all 0.5s ease-in;
 }
-.PaymentInfoForm.active {
+.Peyform{
+  display: none;
+
+}
+.Peyform.active {
   display: flex !important;
 }
 .PaymentInfoForm h5 {
@@ -1952,7 +2029,8 @@ start shoppin card degin
   font-size: 14px;
   font-weight: 500;
 }
-.PaymentInfoForm > h3 {
+.PaymentInfoForm > h3,
+.OrderSummary > h3 {
   color: white;
   font-size: 24px;
   font-weight: 500;
@@ -1966,6 +2044,11 @@ start shoppin card degin
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+/* fix: let the two columns shrink so the inputs don't overflow */
+.PaymentInfoForm .formChild > div {
+  min-width: 0;
+  flex: 1;
 }
 .PaymentInfoForm .checkboxForm {
   flex-direction: row;
@@ -2021,6 +2104,8 @@ start shoppin card degin
 }
 .PaymentInfoForm input,
 #CountryShippingOptions {
+  width: 100%; /* fix: fill the parent column */
+  min-width: 0; /* fix: allow shrinking below the default input width */
   background-color: transparent;
   border: none;
   border-bottom: 1px solid gray;
@@ -2157,6 +2242,149 @@ start shoppin card degin
   background-color: rgb(255, 227, 134);
 }
 
+.OrderSummary {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+}
+
+.totalOrderSummaryRows {
+  height: 70px;
+}
+/* ===== card ===== */
+
+.shoppinList {
+  display: none;
+}
+.shoppinList.active {
+  display: block;
+}
+.OrderConfirmation {
+  grid-area: shoppinList;
+  display: none;
+  background: #fff;
+  color: #0d0f5c;
+  padding: 48px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow--box);
+}
+.OrderConfirmation.active {
+  display: block;
+}
+
+.OrderConfirmation > h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.OrderConfirmation > p {
+  color: #8a8cb3;
+  line-height: 1.6;
+  margin: 0 0 40px;
+  max-width: 700px;
+}
+
+/* main grid: 2 columns */
+.OrderConfirmation > div {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 40px;
+}
+
+.OrderConfirmation > div > div:not(.orderActions) h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.OrderConfirmation > div > div:not(.orderActions) p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* "Order status:" + "Processing..." on one line */
+.OrderConfirmation > div > div:first-child > div:has(> span) {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 20px;
+}
+.OrderConfirmation > div > div:first-child > div:has(> span) h4 {
+  margin: 0;
+}
+
+/* space above "Do you have any questions?" */
+.OrderConfirmation > div > div:not(.orderActions) > div + h4 {
+  margin-top: 28px;
+}
+
+.OrderConfirmation a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.OrderConfirmation a:hover {
+  text-decoration: underline;
+}
+
+/* bottom row */
+.orderActions {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 40px;
+  align-items: end;
+  margin-top: 60px;
+}
+
+.orderActionsEmpty {
+  max-width: 300px;
+  height: 56px;
+  border: 1px solid #8a8cb3;
+  border-radius: 999px;
+}
+
+.orderDelivery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #8a8cb3;
+  font-size: 0.85rem;
+}
+
+.deliveryDate i {
+  margin-right: 6px;
+}
+
+.trackOrderBtn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 999px;
+  background: #0d0f5c;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .OrderConfirmation {
+    padding: 24px;
+    border-radius: 0;
+  }
+  .OrderConfirmation > div,
+  .orderActions {
+    grid-template-columns: 1fr;
+  }
+  .orderActions {
+    row-gap: 16px;
+    margin-top: 32px;
+  }
+}
+
 /* ============================================================
    MEDIA QUERIES
    max-width queries go from LARGEST to SMALLEST, so the
@@ -2186,14 +2414,15 @@ start shoppin card degin
     display: flex;
     flex-direction: column;
   }
-  .ReviewsSection{
-        column-gap: 30px;
-        grid-template-areas: "Rating Reviews ";
+  .ReviewsSection {
+    column-gap: 30px;
+    grid-template-areas: "Rating Reviews ";
   }
-  .ReviewsContainer{
+  .ReviewsContainer {
     flex-direction: column;
   }
-  .ReviewsContainer .reviewLeft,.ReviewsContainer .reviewRight{
+  .ReviewsContainer .reviewLeft,
+  .ReviewsContainer .reviewRight {
     width: 100%;
   }
 }
@@ -2428,6 +2657,7 @@ start shoppin card degin
   .shoppinList {
     overflow-x: scroll;
     border-radius: 0%;
+    width: 100%;
   }
   .PaymentInfo {
     border-radius: 0%;
@@ -2438,15 +2668,15 @@ start shoppin card degin
       "Rating "
       "Reviews ";
   }
-  .ReviewsSection .Rating ,.ReviewsSection .Reviews{
+  .ReviewsSection .Rating,
+  .ReviewsSection .Reviews {
     width: 100%;
-  } 
-  .ReviewsContainer{
+  }
+  .ReviewsContainer {
     flex-direction: column;
   }
-  .ReviewsContainer .reviewLeft,.ReviewsContainer .reviewRight{
+  .ReviewsContainer .reviewLeft,
+  .ReviewsContainer .reviewRight {
     width: 100%;
   }
-  
-
 }

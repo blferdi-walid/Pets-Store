@@ -21,7 +21,7 @@
     <section class="shoppinCard">
       <p class="UrlCON"> contaier/dogs</p>
       <div class="shoppinCardContainer">
-        <div class="shoppinList">
+        <div class="shoppinList active" >
           <h2>Shoppin Cart</h2>
           <div class="cartList">
             <table id="cartTable">
@@ -103,10 +103,57 @@
             </table>
 
           </div>
-        </div>
+        </div> 
+        <div class="OrderConfirmation">
+          <h2>Thank you for Shipping with Us ! </h2>
+          <p>We have successfully received your order. You will receive a confirmation email shortly. As soon as the
+            package has been shipped, you will receive another email with the tracking information and delivery details.
+          </p>
+          <div>
+            <div>
+              <h4>Order summary</h4>
+              <div>
+                <p>Order no.: 4488996633 </p>
+                <p>Order date: 20 December 2021</p>
+                <p>Order total: $37.17</p>
+              </div>
+              <div>
+                <h4>Order status: </h4> <span>Processing ...</span>
+              </div>
+              <div>
+                <h4>Payment method: </h4> <span> Payment card</span>
+              </div>
+            </div>
+            <div>
+              <h4>shipping address</h4>
+              <div>
+                <p>Anton Juan</p>
+                <p>717 Market Street</p>
+                <p>CA 94103</p>
+              </div>
+              <h4>Do you have any questions?</h4>
+              <div>
+                <a href="">Visit our FAS page ></a>
+                <a href="">Contact us ></a>
+              </div>
+
+            </div>
+            <div class="orderActions">
+              <div class="orderActionsEmpty"></div>
+              <div class="orderDelivery">
+                <span class="deliveryDate"><i class="fa-solid fa-truck-fast"></i> Est. delivery: 27 December 2021</span>
+                <button class="trackOrderBtn">Track your order here</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+
+
+
 
         <div class="PaymentInfo" id="PaymentInfo" data-current-page="1" data-max-page="2">
-          <form class="PaymentInfoForm active" data-page="1">
+          <form class="PaymentInfoForm  Peyform active" data-page="1">
             <h5 class="checkoutInfoTittl-1"> Checkout step 1/2</h5>
             <h3>Shipping Info </h3>
             <div class="formChild">
@@ -147,11 +194,11 @@
             <div class="checkboxForm">
               <input type="checkbox"> <span>Use as bilingg address</span>
             </div>
-            <button class="ContinuPaymentBtn"> Continue to Payment ></button>
+            <button class="ContinuPaymentBtn" id="ContinuPaymentBtn"> Continue to Payment ></button>
           </form>
 
 
-          <form class="PaymentInfoForm" id="paymentMethodsBtns" data-page="2">
+          <form class="PaymentInfoForm Peyform" id="paymentMethodsBtns" data-page="2">
             <h5 class="titlePaymentStep2 checkoutInfoTittl-2"> <button class="backHistory"> <i
                   class="fa-solid fa-arrow-left-long"></i> </button> Checkout step 2/2</h5>
             <h3>Payment Info </h3>
@@ -200,8 +247,79 @@
             <div id="PaypalBtnForm" class="paymentinputs">
               <button type="button" id="PaypalBTN"> Pay<span>pal</span> <i class="fa-brands fa-paypal"></i></button>
             </div>
+          </form> 
+
+          <form class="OrderSummary Peyform" id="OrderSummary" data-page="3">
+            <h3>Order Summary </h3>
+            <table id="OrderSummaryTable">
+              <tbody>
+                <tr>
+                  <td class="cardItemImgSection">
+                    <img src="./images/smallPet.png" alt="Hamster leash">
+                    <div class="cardOrderTitle">
+                      <h3>Hamster leash</h3>
+                      <span>Pink, S, 1pcs</span>
+                    </div>
+                  </td>
+
+                  <td class="price">$ 7.29</td>
+                </tr>
+                <tr>
+                  <td class="cardItemImgSection">
+                    <img src="./images/smallPet.png" alt="Hamster leash">
+                    <div class="cardOrderTitle">
+                      <h3>Hamster leash</h3>
+                      <span>Pink, S, 1pcs</span>
+                    </div>
+                  </td>
+
+                  <td class="price">$ 7.29</td>
+                </tr>
+                <tr>
+                  <td class="cardItemImgSection">
+                    <img src="./images/smallPet.png" alt="Hamster leash">
+                    <div class="cardOrderTitle">
+                      <h3>Hamster leash</h3>
+                      <span>Pink, S, 1pcs</span>
+                    </div>
+                  </td>
+
+                  <td class="price">$ 7.29</td>
+                </tr>
+                <tr>
+                  <td class="cardItemImgSection">
+                    <img src="./images/smallPet.png" alt="Hamster leash">
+                    <div class="cardOrderTitle">
+                      <h3>Hamster leash</h3>
+                      <span>Pink, S, 1pcs</span>
+                    </div>
+                  </td>
+
+                  <td class="price">$ 7.29</td>
+                </tr>
+              </tbody>
+
+              <tfoot>
+                <tr class="summaryRow">
+                  <td class="label">
+                    <p>Subtotal:</p>
+                    <p>Shipping:</p>
+                  </td>
+                  <td class="priceOrder">
+                    <p>$ 35.17</p>
+                    <p>$ 2.00</p>
+                  </td>
+                </tr>
+                <tr class="totalOrderSummaryRows">
+                  <td class="label">Total:</td>
+                  <td class="price totalPrice">$ 37.17</td>
+                </tr>
+              </tfoot>
+            </table>
           </form>
         </div>
+  
+        
       </div>
 
     </section>
