@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "title": "10 Things Every New Dog Owner Should Know",
+    "category": "dog",
+    "author": "Sarah Johnson",
+    "date": "2026-08-01",
+    "image": "./images/dogs.png",
+    "summary": "From choosing the right food to setting up a training routine, here's everything you need to know before bringing home your first puppy.",
+    "content": "Bringing a new dog into your home is exciting, but it also comes with responsibility. Start with a consistent feeding schedule, a safe sleeping space, and early socialization. Enroll in basic obedience training, keep up with vaccinations and vet visits, and give your dog plenty of daily exercise. Patience and positive reinforcement are the keys to a happy, well-behaved companion."
+  },
+  {
+    "id": 2,
+    "title": "How to Keep Your Dog Active and Healthy",
+    "category": "dog",
+    "author": "David Miller",
+    "date": "2026-08-02",
+    "image": "./images/dogs.png",
+    "summary": "Daily exercise and mental stimulation are essential for a happy dog. Discover simple activities that keep your best friend fit.",
+    "content": "Dogs need more than a quick walk around the block. Mix up walks, fetch, swimming, and puzzle toys to keep both body and mind busy. Match the intensity to your dog's breed, age, and health, and always provide fresh water. Regular activity prevents obesity, reduces destructive behavior, and strengthens the bond between you and your dog."
+  },
+  {
+    "id": 3,
+    "title": "Positive Reinforcement Training: A Step-by-Step Guide",
+    "category": "dog",
+    "author": "Sarah Johnson",
+    "date": "2026-08-13",
+    "image": "./images/dogs.png",
+    "summary": "Reward-based training builds trust and gets lasting results. Learn how to start today.",
+    "content": "Reward the behavior you want with treats, praise, or play within a second or two of it happening. Keep sessions short, practice in different places, and be consistent with cues. Never punish mistakes; simply redirect and try again so your dog stays confident and eager to learn."
+  },
+  {
+    "id": 4,
+    "title": "Dog Nutrition 101: Choosing the Right Food",
+    "category": "dog",
+    "author": "David Miller",
+    "date": "2026-08-14",
+    "image": "./images/dogs.png",
+    "summary": "Kibble, wet, or raw? Understand what your dog's bowl really needs.",
+    "content": "Look for a food that lists a named meat source first and meets AAFCO standards for your dog's life stage. Puppies, adults, and seniors have different needs, and large breeds benefit from tailored formulas. Measure portions, limit treats to ten percent of daily calories, and talk to your vet before switching diets."
+  },
+  {
+    "id": 5,
+    "title": "How to Stop Your Dog From Pulling on the Leash",
+    "category": "dog",
+    "author": "Michael Lee",
+    "date": "2026-08-15",
+    "image": "./images/dogs.png",
+    "summary": "Walks should be fun, not a tug-of-war. Try these simple techniques.",
+    "content": "Stop moving whenever the leash goes tight and only continue when it slackens. Reward your dog for walking beside you, change direction often, and use a well-fitted harness. Practice in low-distraction places first and increase difficulty gradually."
+  },
+  {
+    "id": 6,
+    "title": "Puppy Socialization: Why the First 16 Weeks Matter",
+    "category": "dog",
+    "author": "Olivia Brown",
+    "date": "2026-08-16",
+    "image": "./images/dogs.png",
+    "summary": "Early positive experiences shape a confident adult dog.",
+    "content": "Between three and sixteen weeks, puppies are most open to new sights, sounds, people, and animals. Introduce them gently and pair every new experience with treats. Safe, well-managed puppy classes help prevent fear and aggression later in life."
+  },
+  {
+    "id": 7,
+    "title": "Dental Care for Dogs: Keeping Those Teeth Healthy",
+    "category": "dog",
+    "author": "Daniel Carter",
+    "date": "2026-08-17",
+    "image": "./images/dogs.png",
+    "summary": "Dental disease is common but preventable with a simple routine.",
+    "content": "Brush your dog's teeth several times a week with dog-safe toothpaste. Dental chews and regular vet cleanings help control tartar. Watch for bad breath, red gums, or difficulty eating, which can signal problems that need attention."
+  },
+  {
+    "id": 8,
+    "title": "Traveling With Your Dog: Tips for Stress-Free Trips",
+    "category": "dog",
+    "author": "Emily Davis",
+    "date": "2026-08-18",
+    "image": "./images/dogs.png",
+    "summary": "Whether by car or plane, a little planning makes travel safer and calmer.",
+    "content": "Use a crash-tested harness or crate in the car and take breaks every couple of hours. Pack water, food, medications, and vaccination records. Check pet policies at hotels in advance and never leave your dog alone in a parked vehicle."
+  },
+  {
+    "id": 9,
+    "title": "Senior Dog Care: Helping Your Dog Age Gracefully",
+    "category": "dog",
+    "author": "Laura Wilson",
+    "date": "2026-08-19",
+    "image": "./images/dogs.png",
+    "summary": "Older dogs need extra comfort, gentle exercise, and more frequent checkups.",
+    "content": "Switch to shorter, gentler walks and provide orthopedic bedding for sore joints. Schedule vet visits twice a year, monitor weight, and ask about senior diets and supplements. Mental games keep an aging mind sharp."
+  },
+  {
+    "id": 10,
+    "title": "Understanding Common Dog Behavior Problems",
+    "category": "dog",
+    "author": "James Anderson",
+    "date": "2026-08-20",
+    "image": "./images/dogs.png",
+    "summary": "Barking, chewing, and digging usually have a cause. Find it and fix it.",
+    "content": "Most unwanted behaviors come from boredom, anxiety, or unmet needs. Increase exercise, provide appropriate chew toys, and teach alternative behaviors. If problems persist or involve aggression, consult a certified trainer or veterinary behaviorist."
+  },
+  {
+    "id": 11,
+    "title": "Understanding Your Cat's Body Language",
+    "category": "cat",
+    "author": "Michael Lee",
+    "date": "2026-08-03",
+    "image": "./images/cat.png",
+    "summary": "Cats communicate a lot through posture, tail movement, and ear position. Learn how to read the signs to better understand your feline friend.",
+    "content": "Unlike dogs, cats communicate subtly. A slow blink is a sign of trust and affection, while a puffed-up tail signals fear or aggression. Ears pointed forward show curiosity, and flattened ears warn you to back off. Paying attention to these signals helps you respond to your cat's needs and build a stronger relationship."
+  },
+  {
+    "id": 12,
+    "title": "Creating the Perfect Indoor Space for Your Cat",
+    "category": "cat",
+    "author": "Olivia Brown",
+    "date": "2026-08-04",
+    "image": "./images/cat.png",
+    "summary": "Indoor cats need enrichment to stay happy. Learn how scratching posts, window perches, and playtime make a big difference.",
+    "content": "Indoor cats thrive when their environment lets them climb, scratch, hide, and observe. Provide vertical spaces such as cat trees and shelves, a quiet litter area, and window perches for bird watching. Rotate toys regularly and schedule daily play sessions to prevent boredom and keep your cat at a healthy weight."
+  },
+  {
+    "id": 13,
+    "title": "Choosing the Best Food for Your Cat",
+    "category": "cat",
+    "author": "Sophie Clark",
+    "date": "2026-08-21",
+    "image": "./images/cat.png",
+    "summary": "Cats are obligate carnivores. Learn what to look for on the label.",
+    "content": "Cats need high-quality animal protein, taurine, and adequate moisture. Wet food supports hydration and urinary health, while dry food is convenient but should be measured carefully. Choose a formula matched to your cat's age and weight."
+  },
+  {
+    "id": 14,
+    "title": "How to Introduce a New Cat to Your Household",
+    "category": "cat",
+    "author": "Thomas Green",
+    "date": "2026-08-22",
+    "image": "./images/cat.png",
+    "summary": "Slow introductions prevent fights and build friendships.",
+    "content": "Keep the newcomer in a separate room at first and swap bedding so the animals learn each other's scent. Move on to short supervised meetings with treats and praise. Expect the process to take days or weeks, and never rush it."
+  },
+  {
+    "id": 15,
+    "title": "Why Do Cats Purr? The Science Behind the Sound",
+    "category": "cat",
+    "author": "Emma Torres",
+    "date": "2026-08-23",
+    "image": "./images/cat.png",
+    "summary": "Purring means more than contentment. Discover what your cat may be telling you.",
+    "content": "Cats purr when relaxed, but also when stressed, hurt, or seeking comfort. The vibration may even aid healing. Consider the situation and other body language to understand the true meaning."
+  },
+  {
+    "id": 16,
+    "title": "Litter Box Basics: Keeping Your Cat Happy and Your Home Fresh",
+    "category": "cat",
+    "author": "Noah Walker",
+    "date": "2026-08-24",
+    "image": "./images/cat.png",
+    "summary": "The right box, litter, and location prevent most accidents.",
+    "content": "Provide one box per cat plus one extra, scoop daily, and wash the box weekly. Place it in a quiet, accessible spot away from food. Sudden avoidance of the box can signal a medical issue, so check with your vet."
+  },
+  {
+    "id": 17,
+    "title": "Grooming Your Cat: Brushing, Baths, and Nail Trims",
+    "category": "cat",
+    "author": "Sarah Johnson",
+    "date": "2026-08-25",
+    "image": "./images/cat.png",
+    "summary": "A regular routine reduces hairballs and keeps coats shiny.",
+    "content": "Brush short-haired cats weekly and long-haired cats daily. Most cats rarely need baths, but trim nails every few weeks. Introduce handling early with treats so grooming becomes a calm, positive experience."
+  },
+  {
+    "id": 18,
+    "title": "Common Cat Health Problems Every Owner Should Recognize",
+    "category": "cat",
+    "author": "David Miller",
+    "date": "2026-08-26",
+    "image": "./images/cat.png",
+    "summary": "Early detection can save your cat's life.",
+    "content": "Watch for changes in appetite, thirst, litter habits, weight, or energy. Dental disease, kidney problems, and urinary issues are common. Annual checkups and prompt vet visits for unusual symptoms keep your cat healthy longer."
+  },
+  {
+    "id": 19,
+    "title": "Fun Indoor Games to Play With Your Cat",
+    "category": "cat",
+    "author": "Michael Lee",
+    "date": "2026-08-27",
+    "image": "./images/cat.png",
+    "summary": "Play satisfies hunting instincts and strengthens your bond.",
+    "content": "Wand toys, laser pointers followed by a real treat, and puzzle feeders all engage your cat's mind. Short sessions twice a day burn energy and prevent boredom. Always end with a catch so your cat feels successful."
+  },
+  {
+    "id": 20,
+    "title": "Kitten Care Guide: The First Months at Home",
+    "category": "cat",
+    "author": "Olivia Brown",
+    "date": "2026-08-28",
+    "image": "./images/cat.png",
+    "summary": "Kittens need warmth, nutrition, vaccines, and lots of gentle socialization.",
+    "content": "Feed kitten-formulated food several times daily, schedule vaccinations and spay or neuter surgery, and kitten-proof your home. Provide scratching posts and toys, and handle your kitten often so it grows into a friendly adult."
+  },
+  {
+    "id": 21,
+    "title": "Setting Up Your First Freshwater Aquarium",
+    "category": "otherPets",
+    "author": "Daniel Carter",
+    "date": "2026-08-05",
+    "image": "./images/fish.png",
+    "summary": "A healthy aquarium starts with the right setup. Here's a step-by-step guide to tanks, filters, and cycling the water.",
+    "content": "Choose a tank that is large enough for the species you want, since bigger tanks are more stable. Install a filter and heater, add dechlorinated water, and let the tank cycle for several weeks before adding fish. Introduce fish gradually, test water parameters often, and perform regular partial water changes."
+  },
+  {
+    "id": 22,
+    "title": "Best Beginner Fish for a Community Tank",
+    "category": "otherPets",
+    "author": "Emily Davis",
+    "date": "2026-08-06",
+    "image": "./images/fish.png",
+    "summary": "Not all fish get along. Meet the hardy, peaceful species that are perfect for first-time aquarium owners.",
+    "content": "Guppies, tetras, mollies, and corydoras are colorful, hardy, and peaceful, making them ideal for beginners. Avoid mixing aggressive or fin-nipping species with gentle ones, and research each fish's adult size and water requirements. A well-planned community tank is easier to maintain and far more enjoyable to watch."
+  },
+  {
+    "id": 23,
+    "title": "How to Cycle Your Aquarium the Right Way",
+    "category": "otherPets",
+    "author": "Daniel Carter",
+    "date": "2026-08-29",
+    "image": "./images/fish.png",
+    "summary": "The nitrogen cycle is the foundation of a healthy tank.",
+    "content": "Beneficial bacteria convert toxic ammonia into nitrite and then nitrate. Establish them by adding an ammonia source and testing until ammonia and nitrite read zero. Only then should you add fish."
+  },
+  {
+    "id": 24,
+    "title": "Understanding Water Parameters: pH, Ammonia, and Nitrate",
+    "category": "otherPets",
+    "author": "Emily Davis",
+    "date": "2026-08-30",
+    "image": "./images/fish.png",
+    "summary": "Test kits tell you what your eyes can't.",
+    "content": "Test regularly for pH, ammonia, nitrite, and nitrate. Keep ammonia and nitrite at zero and nitrate under 40 ppm. Sudden changes stress fish, so adjust parameters gradually."
+  },
+  {
+    "id": 25,
+    "title": "Choosing the Right Filter for Your Fish Tank",
+    "category": "otherPets",
+    "author": "Laura Wilson",
+    "date": "2026-08-31",
+    "image": "./images/fish.png",
+    "summary": "Good filtration keeps water clear and fish healthy.",
+    "content": "Hang-on-back, canister, and sponge filters all work in different setups. Pick a filter rated for your tank size and clean the media in old tank water to protect beneficial bacteria."
+  },
+  {
+    "id": 26,
+    "title": "Live Plants vs. Artificial Plants: Which Is Better?",
+    "category": "otherPets",
+    "author": "James Anderson",
+    "date": "2026-09-01",
+    "image": "./images/fish.png",
+    "summary": "Plants add beauty and function to every aquarium.",
+    "content": "Live plants absorb nitrates, provide shelter, and compete with algae. Artificial plants need no light or care. Beginners can start with hardy species like java fern and anubias."
+  },
+  {
+    "id": 27,
+    "title": "Feeding Your Fish: How Much and How Often",
+    "category": "otherPets",
+    "author": "Sophie Clark",
+    "date": "2026-09-02",
+    "image": "./images/fish.png",
+    "summary": "Overfeeding is the most common mistake in the hobby.",
+    "content": "Feed only what your fish can eat in two minutes, once or twice daily. Vary flakes, pellets, and frozen foods for balanced nutrition. Remove leftovers to keep the water clean."
+  },
+  {
+    "id": 28,
+    "title": "Common Fish Diseases and How to Treat Them",
+    "category": "otherPets",
+    "author": "Thomas Green",
+    "date": "2026-09-03",
+    "image": "./images/fish.png",
+    "summary": "Learn to spot ich, fin rot, and other problems early.",
+    "content": "White spots, clamped fins, and sluggish behavior are warning signs. Quarantine sick fish, maintain pristine water, and use appropriate medications. Prevention through good husbandry is the best cure."
+  },
+  {
+    "id": 29,
+    "title": "Getting Started With a Saltwater Aquarium",
+    "category": "otherPets",
+    "author": "Emma Torres",
+    "date": "2026-09-04",
+    "image": "./images/fish.png",
+    "summary": "Marine tanks are rewarding but demand patience and research.",
+    "content": "Saltwater setups need live rock, a protein skimmer, stable salinity, and consistent testing. Start with hardy fish like clownfish and add livestock slowly."
+  },
+  {
+    "id": 30,
+    "title": "How to Do a Water Change Without Stressing Your Fish",
+    "category": "otherPets",
+    "author": "Noah Walker",
+    "date": "2026-09-05",
+    "image": "./images/fish.png",
+    "summary": "Regular water changes are the easiest way to keep a tank thriving.",
+    "content": "Replace 20 to 30 percent of the water weekly, vacuuming the gravel as you go. Treat tap water with dechlorinator and match temperature to avoid shock."
+  },
+  {
+    "id": 31,
+    "title": "A Complete Guide to Feeding Pet Birds",
+    "category": "otherPets",
+    "author": "Laura Wilson",
+    "date": "2026-08-07",
+    "image": "./images/bird.png",
+    "summary": "Seeds alone aren't enough. Learn how pellets, fresh vegetables, and fruit keep your bird healthy and vibrant.",
+    "content": "A balanced bird diet is built on high-quality pellets, supplemented with fresh vegetables, leafy greens, and a small amount of fruit and seeds. Avoid avocado, chocolate, caffeine, and salty foods, which are toxic to birds. Always provide clean water daily and remove uneaten fresh food to prevent spoilage."
+  },
+  {
+    "id": 32,
+    "title": "Helping Your Parrot Stay Happy and Social",
+    "category": "otherPets",
+    "author": "James Anderson",
+    "date": "2026-08-08",
+    "image": "./images/bird.png",
+    "summary": "Parrots are intelligent and social animals. Find out how to keep them entertained and emotionally healthy.",
+    "content": "Parrots need daily interaction, toys to chew, and time outside the cage in a safe space. Teach simple tricks, talk and sing with your bird, and rotate toys to keep things interesting. A lonely or bored parrot may pluck feathers or scream, so a rich routine is essential to its wellbeing."
+  },
+  {
+    "id": 33,
+    "title": "How to Choose the Right Pet Bird for Your Lifestyle",
+    "category": "otherPets",
+    "author": "Sarah Johnson",
+    "date": "2026-09-06",
+    "image": "./images/bird.png",
+    "summary": "From budgies to macaws, each species has unique needs.",
+    "content": "Consider size, noise level, lifespan, and how much time you can spend with your bird. Budgies and cockatiels suit beginners, while larger parrots require experience and commitment."
+  },
+  {
+    "id": 34,
+    "title": "Setting Up the Ideal Bird Cage",
+    "category": "otherPets",
+    "author": "David Miller",
+    "date": "2026-09-07",
+    "image": "./images/bird.png",
+    "summary": "A good cage is a safe, comfortable home base.",
+    "content": "Choose the largest cage you can afford with proper bar spacing. Add varied perches, toys, and food dishes, and place the cage in a bright, draft-free room with some activity."
+  },
+  {
+    "id": 35,
+    "title": "Teaching Your Bird to Talk",
+    "category": "otherPets",
+    "author": "Michael Lee",
+    "date": "2026-09-08",
+    "image": "./images/bird.png",
+    "summary": "Patience and repetition can unlock your bird's vocabulary.",
+    "content": "Repeat simple words in a happy tone during calm moments and reward attempts with treats. Not all birds talk, but species like parrots and mynahs are talented mimics."
+  },
+  {
+    "id": 36,
+    "title": "Common Bird Illnesses and Warning Signs",
+    "category": "otherPets",
+    "author": "Olivia Brown",
+    "date": "2026-09-09",
+    "image": "./images/bird.png",
+    "summary": "Birds hide sickness, so know what to look for.",
+    "content": "Fluffed feathers, tail bobbing, changes in droppings, and loss of appetite can signal illness. See an avian vet quickly, as birds can decline fast."
+  },
+  {
+    "id": 37,
+    "title": "Bird Toys and Enrichment Ideas",
+    "category": "otherPets",
+    "author": "Daniel Carter",
+    "date": "2026-09-10",
+    "image": "./images/bird.png",
+    "summary": "Bored birds develop behavior problems.",
+    "content": "Offer shreddable, foraging, and puzzle toys. Rotate them weekly and hide treats to encourage natural foraging behaviors."
+  },
+  {
+    "id": 38,
+    "title": "Bathing and Feather Care for Pet Birds",
+    "category": "otherPets",
+    "author": "Emily Davis",
+    "date": "2026-09-11",
+    "image": "./images/bird.png",
+    "summary": "Clean feathers mean healthier birds.",
+    "content": "Offer a shallow dish or gentle misting several times a week. Provide full-spectrum lighting and watch for feather plucking, which may indicate stress or medical problems."
+  },
+  {
+    "id": 39,
+    "title": "Understanding Bird Sleep Needs",
+    "category": "otherPets",
+    "author": "Laura Wilson",
+    "date": "2026-09-12",
+    "image": "./images/bird.png",
+    "summary": "Most birds need 10 to 12 hours of quiet darkness each night.",
+    "content": "Cover the cage or move it to a quiet room at a regular bedtime. Consistent sleep reduces hormonal behavior and improves mood."
+  },
+  {
+    "id": 40,
+    "title": "Bonding With Your Bird: Building Trust Step by Step",
+    "category": "otherPets",
+    "author": "James Anderson",
+    "date": "2026-09-13",
+    "image": "./images/bird.png",
+    "summary": "Trust takes time, but it transforms your relationship.",
+    "content": "Sit near the cage and talk softly, then offer treats from your hand. Let your bird set the pace and never force handling."
+  },
+  {
+    "id": 41,
+    "title": "Choosing the Right Small Pet for Your Home",
+    "category": "otherPets",
+    "author": "Sophie Clark",
+    "date": "2026-08-09",
+    "image": "./images/smallPet.png",
+    "summary": "Rabbits, hamsters, guinea pigs, and more: compare their care needs to find the best small companion for your family.",
+    "content": "Small pets differ widely in lifespan, temperament, and space needs. Guinea pigs and rabbits are social and need roomy enclosures and companions, while hamsters are solitary and nocturnal. Consider your schedule, budget, and living space, and always research proper diet and housing before bringing a small pet home."
+  },
+  {
+    "id": 42,
+    "title": "Caring for Rabbits: Diet, Housing, and Health",
+    "category": "otherPets",
+    "author": "Thomas Green",
+    "date": "2026-08-10",
+    "image": "./images/smallPet.png",
+    "summary": "Rabbits need far more than carrots. Learn about hay, space to hop, and regular vet checkups.",
+    "content": "Unlimited fresh hay should make up most of a rabbit's diet, along with leafy greens and a measured amount of pellets. Provide a large enclosure with daily time to run and explore, and rabbit-proof any area they roam. Regular dental and health checkups with an exotic-savvy vet help prevent common problems."
+  },
+  {
+    "id": 43,
+    "title": "Guinea Pig Care: Everything You Need to Know",
+    "category": "otherPets",
+    "author": "Sophie Clark",
+    "date": "2026-09-14",
+    "image": "./images/smallPet.png",
+    "summary": "Guinea pigs are gentle, vocal, and social animals.",
+    "content": "Provide unlimited hay, daily vitamin C-rich vegetables, and a large cage. Keep guinea pigs in pairs and give them time outside the cage to explore."
+  },
+  {
+    "id": 44,
+    "title": "Hamster Habitat: Building a Happy Home",
+    "category": "otherPets",
+    "author": "Thomas Green",
+    "date": "2026-09-15",
+    "image": "./images/smallPet.png",
+    "summary": "A hamster's world is its cage, so make it a good one.",
+    "content": "Provide deep bedding for burrowing, a solid exercise wheel, chew toys, and hideouts. Clean spot areas regularly and do full cleanings monthly."
+  },
+  {
+    "id": 45,
+    "title": "Hand-Taming Your New Small Pet",
+    "category": "otherPets",
+    "author": "Emma Torres",
+    "date": "2026-09-16",
+    "image": "./images/smallPet.png",
+    "summary": "Gentle handling turns shy pets into friendly companions.",
+    "content": "Let your pet settle in for a few days, then offer treats from your hand. Gradually progress to short handling sessions close to the floor."
+  },
+  {
+    "id": 46,
+    "title": "Best Hay and Bedding Choices for Small Animals",
+    "category": "otherPets",
+    "author": "Noah Walker",
+    "date": "2026-09-17",
+    "image": "./images/smallPet.png",
+    "summary": "The right materials keep pets healthy and comfortable.",
+    "content": "Timothy hay is ideal for rabbits and guinea pigs. Choose dust-free paper-based or aspen bedding, and avoid cedar and pine shavings that can harm respiratory health."
+  },
+  {
+    "id": 47,
+    "title": "Chinchilla Care Basics",
+    "category": "otherPets",
+    "author": "Sarah Johnson",
+    "date": "2026-09-18",
+    "image": "./images/smallPet.png",
+    "summary": "Chinchillas are playful but have special needs.",
+    "content": "They require dust baths, cool temperatures, and a hay-based diet. Provide plenty of chew items and a spacious multi-level cage."
+  },
+  {
+    "id": 48,
+    "title": "Fun Enrichment Ideas for Rabbits and Guinea Pigs",
+    "category": "otherPets",
+    "author": "David Miller",
+    "date": "2026-09-19",
+    "image": "./images/smallPet.png",
+    "summary": "Mental stimulation keeps small pets happy.",
+    "content": "Build cardboard tunnels, hide treats in hay, and create safe obstacle courses. Rotate items often to keep things new."
+  },
+  {
+    "id": 49,
+    "title": "Signs of Illness in Small Pets",
+    "category": "otherPets",
+    "author": "Michael Lee",
+    "date": "2026-09-20",
+    "image": "./images/smallPet.png",
+    "summary": "Small animals hide pain, so early detection is key.",
+    "content": "Changes in appetite, droppings, or activity warrant a vet visit. Teeth, skin, and breathing problems are common and treatable if caught early."
+  },
+  {
+    "id": 50,
+    "title": "Gerbils, Mice, and Rats: Comparing Popular Rodent Pets",
+    "category": "otherPets",
+    "author": "Olivia Brown",
+    "date": "2026-09-21",
+    "image": "./images/smallPet.png",
+    "summary": "Each rodent has its own personality and requirements.",
+    "content": "Rats are intelligent and affectionate, gerbils are active and social, and mice are small and quick. Compare lifespan, space needs, and handling before choosing."
+  },
+  {
+    "id": 51,
+    "title": "A Beginner's Guide to Keeping Reptiles as Pets",
+    "category": "otherPets",
+    "author": "Emma Torres",
+    "date": "2026-08-11",
+    "image": "./images/reptiles.png",
+    "summary": "Reptiles make fascinating low-maintenance pets, but they have very specific habitat and temperature needs. Here's what beginners should know.",
+    "content": "Reptiles like bearded dragons, geckos, and turtles require carefully controlled environments to thrive. Provide a properly sized enclosure with a temperature gradient, UVB lighting where needed, and the correct humidity. Feed a species-appropriate diet and handle your reptile gently to keep stress low."
+  },
+  {
+    "id": 52,
+    "title": "Setting Up the Perfect Terrarium for Your Reptile",
+    "category": "otherPets",
+    "author": "Noah Walker",
+    "date": "2026-08-12",
+    "image": "./images/reptiles.png",
+    "summary": "Heating, lighting, and hiding spots all matter. Build a terrarium that mimics your reptile's natural habitat.",
+    "content": "Start with a secure, well-ventilated enclosure and add a basking spot, a cooler zone, and at least one hide. Use thermometers and hygrometers to monitor conditions, and choose a safe substrate for your species. Clean the habitat regularly and replace bulbs on schedule so your reptile stays healthy."
+  },
+  {
+    "id": 53,
+    "title": "Bearded Dragon Care Guide",
+    "category": "otherPets",
+    "author": "Daniel Carter",
+    "date": "2026-09-22",
+    "image": "./images/reptiles.png",
+    "summary": "These friendly lizards are a popular beginner reptile.",
+    "content": "Provide a large tank with a basking spot around 100 degrees, UVB lighting, and a diet of insects and leafy greens. Handle gently and often to build trust."
+  },
+  {
+    "id": 54,
+    "title": "Leopard Gecko Care: Habitat, Diet, and Handling",
+    "category": "otherPets",
+    "author": "Emily Davis",
+    "date": "2026-09-23",
+    "image": "./images/reptiles.png",
+    "summary": "Hardy and docile, leopard geckos are great starter pets.",
+    "content": "Offer a warm side and cool side, a moist hide for shedding, and a diet of gut-loaded insects. Dust food with calcium regularly."
+  },
+  {
+    "id": 55,
+    "title": "Ball Python Basics for First-Time Snake Owners",
+    "category": "otherPets",
+    "author": "Laura Wilson",
+    "date": "2026-09-24",
+    "image": "./images/reptiles.png",
+    "summary": "Calm and manageable, ball pythons are a favorite snake.",
+    "content": "Maintain proper heat and humidity, feed appropriately sized rodents, and give your snake secure hides. Learn the signs of stress and illness."
+  },
+  {
+    "id": 56,
+    "title": "Turtle and Tortoise Care: What's the Difference?",
+    "category": "otherPets",
+    "author": "James Anderson",
+    "date": "2026-09-25",
+    "image": "./images/reptiles.png",
+    "summary": "Aquatic turtles and land tortoises need very different homes.",
+    "content": "Turtles need a large filtered tank with a basking dock, while tortoises need a spacious dry enclosure with grazing foods. Both can live for decades."
+  },
+  {
+    "id": 57,
+    "title": "Understanding Reptile Shedding",
+    "category": "otherPets",
+    "author": "Sophie Clark",
+    "date": "2026-09-26",
+    "image": "./images/reptiles.png",
+    "summary": "Shedding is normal, but problems can arise.",
+    "content": "Increase humidity and offer a moist hide during shedding. Never pull stuck skin, and consult a vet if retained shed persists."
+  },
+  {
+    "id": 58,
+    "title": "Feeding Live Insects and Prey Safely",
+    "category": "otherPets",
+    "author": "Thomas Green",
+    "date": "2026-09-27",
+    "image": "./images/reptiles.png",
+    "summary": "A proper diet keeps your reptile thriving.",
+    "content": "Gut-load feeder insects, dust them with supplements, and avoid oversized prey. Remove uneaten live prey to prevent injuries."
+  },
+  {
+    "id": 59,
+    "title": "Common Reptile Health Problems",
+    "category": "otherPets",
+    "author": "Emma Torres",
+    "date": "2026-09-28",
+    "image": "./images/reptiles.png",
+    "summary": "Metabolic bone disease and respiratory infections are preventable.",
+    "content": "Proper UVB, temperature, and calcium supplementation prevent most health issues. See an exotics vet at the first signs of trouble."
+  },
+  {
+    "id": 60,
+    "title": "Choosing Your First Reptile: Which Species Fits You?",
+    "category": "otherPets",
+    "author": "Noah Walker",
+    "date": "2026-09-29",
+    "image": "./images/reptiles.png",
+    "summary": "Research is the best first step before bringing a reptile home.",
+    "content": "Compare size, lifespan, temperament, and care difficulty. Bearded dragons, leopard geckos, and corn snakes are great beginner choices."
+  },
+  {
+    "id": 61,
+    "title": "Pet-Proofing Your Home: A Room-by-Room Checklist",
+    "category": "generalTips",
+    "author": "Sarah Johnson",
+    "date": "2026-10-01",
+    "image": "./images/dogs.png",
+    "summary": "Secure cords, cabinets, and toxic plants before your new pet arrives.",
+    "content": "Walk through each room at pet height. Hide electrical cords, lock cabinets with cleaners or medicines, and remove toxic plants like lilies and sago palms. Keep small objects, trash, and human food out of reach."
+  },
+  {
+    "id": 62,
+    "title": "How to Build a Pet Emergency Kit",
+    "category": "generalTips",
+    "author": "David Miller",
+    "date": "2026-10-02",
+    "image": "./images/dogs.png",
+    "summary": "Be ready for storms, evacuations, and sudden vet trips.",
+    "content": "Pack several days of food and water, medications, copies of vaccination records, a leash or carrier, and a basic first-aid kit. Add a recent photo of your pet and your vet's contact details, and check expiry dates twice a year."
+  },
+  {
+    "id": 63,
+    "title": "Understanding Pet Insurance: Is It Worth It?",
+    "category": "generalTips",
+    "author": "Michael Lee",
+    "date": "2026-10-03",
+    "image": "./images/dogs.png",
+    "summary": "Compare coverage, deductibles, and exclusions before you choose.",
+    "content": "Pet insurance can soften the cost of accidents and illness. Compare monthly premiums, deductibles, reimbursement rates, and annual limits, and read exclusions for pre-existing conditions. Enroll early, while your pet is young and healthy."
+  },
+  {
+    "id": 64,
+    "title": "Spaying and Neutering: What Every Owner Should Know",
+    "category": "generalTips",
+    "author": "Olivia Brown",
+    "date": "2026-10-04",
+    "image": "./images/dogs.png",
+    "summary": "Health benefits, timing, and recovery explained simply.",
+    "content": "Spaying and neutering prevent unwanted litters and reduce the risk of certain cancers and infections. The best timing depends on species, breed, and size, so ask your vet. Provide a quiet space and limit activity during recovery."
+  },
+  {
+    "id": 65,
+    "title": "Keeping Pets Safe and Cool in Summer Heat",
+    "category": "generalTips",
+    "author": "Emily Davis",
+    "date": "2026-10-05",
+    "image": "./images/dogs.png",
+    "summary": "Heatstroke is preventable with a few simple habits.",
+    "content": "Always provide shade and fresh water, avoid exercise during peak heat, and never leave a pet in a parked car. Watch for heavy panting, drooling, or weakness, and contact a vet immediately if you suspect heatstroke."
+  }
+]
