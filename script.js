@@ -2740,7 +2740,7 @@ if (headerId) {
   // uppercase the nav links, now that the header actually exists in the DOM
   const NavLinks = document.querySelectorAll(".Nav-Right-Links-text ul a");
   NavLinks.forEach((link) => {
-    link.textContent = link.textContent.toUpperCase();
+    link.innerHTML = link.innerHTML.toUpperCase();
   });
 }
 
@@ -2918,7 +2918,7 @@ function buildFilterButtons() {
     b.type = "button";
     b.className = "filterBtn" + (btn.category === "all" ? " active" : "");
     b.dataset.category = btn.category;
-    b.textContent = btn.label;
+    b.innerHTML = btn.label;
     bar.appendChild(b);
     b.addEventListener("click", () => {
       document
@@ -3068,8 +3068,8 @@ function renderProductDetails() {
   const urlSegments = productPage.querySelector(".UrlCON");
   if (urlSegments) {
     const { title, animal, category } = product;
-    urlSegments.textContent = `categories/${animal}/${category}/${title}`;
-    const text = urlSegments.textContent;
+    urlSegments.innerHTML = `categories/${animal}/${category}/${title}`;
+    const text = urlSegments.innerHTML;
     const urlSplt = text.split("/");
     urlSegments.innerHTML = urlSplt
       .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
@@ -3276,12 +3276,12 @@ function initProductDetail() {
 
   if (SizeLab && SizeItemValue) {
     SizeItemValue.addEventListener("change", (e) => {
-      SizeLab.textContent = e.target.value;
+      SizeLab.innerHTML = e.target.value;
     });
   }
 
   // read more
-  const sentences = paragraph.textContent.split(".").filter((s) => s.trim());
+  const sentences = paragraph.innerHTML.split(".").filter((s) => s.trim());
 
   if (sentences.length > 1) {
     const visible = sentences[0].trim() + ".";
@@ -3299,7 +3299,7 @@ function initProductDetail() {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       more.hidden = !more.hidden;
-      link.textContent = more.hidden ? "Read more" : "Read less";
+      link.innerHTML = more.hidden ? "Read more" : "Read less";
     });
   }
 
@@ -3328,7 +3328,7 @@ function initProductDetail() {
       .forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
-    if (colorN) colorN.textContent = btn.dataset.color;
+    if (colorN) colorN.innerHTML = btn.dataset.color;
   });
 }
 
@@ -3383,8 +3383,8 @@ class paymentPagesSteps {
       const urlSegments = document.querySelector(".UrlCON");
 
       if (urlSegments) {
-        urlSegments.textContent = `Shopping card /Order summary`;
-        const text = urlSegments.textContent;
+        urlSegments.innerHTML = `Shopping card /Order summary`;
+        const text = urlSegments.innerHTML;
         const urlSplt = text.split("/");
         urlSegments.innerHTML = urlSplt
           .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)
@@ -3440,8 +3440,8 @@ const Urlrender = (Titel) => {
   const checkoutInfoTittl = document.querySelector(`.${Titel}`);
 
   if (urlSegments) {
-    urlSegments.textContent = `Shopping card /${checkoutInfoTittl?.textContent.trim()}`;
-    const text = urlSegments.textContent;
+    urlSegments.innerHTML = `Shopping card /${checkoutInfoTittl?.innerHTML.trim()}`;
+    const text = urlSegments.innerHTML;
     const urlSplt = text.split("/");
     urlSegments.innerHTML = urlSplt
       .map((seg) => `<span class="lastSegmentURL">${seg}</span>`)

@@ -1,0 +1,21 @@
+{
+  "name": "animalsweb",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": " index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blferdi-walid/Pets-Store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/blferdi-walid/Pets-Store/issues"
+  },
+  "homepage": "https://github.com/blferdi-walid/Pets-Store#readme"
+}
