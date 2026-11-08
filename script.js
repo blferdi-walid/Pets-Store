@@ -38,12 +38,6 @@ const categoriesItemDB = [
     img: "./images/reptiles.png",
     category: "animals",
   },
-  {
-    id: 7,
-    name: "reptiles",
-    img: "./images/reptiles.png",
-    category: "food",
-  },
 ];
 
 const SpecialOffersDB_Treats = [
