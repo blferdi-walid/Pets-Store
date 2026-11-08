@@ -10,7 +10,7 @@ const FEATURED_COUNT = 3; // cards in the top section
 const PAGE_SIZE = 6; // cards added by each "Load more"
 
 let blogsDB = [];
-let NumberLoading = PAGE_SIZE;
+let NumberofLoading = PAGE_SIZE;
 let currentCategory = "all";
 
 const blogsPage = document.querySelector("#blogsPage");
@@ -141,17 +141,17 @@ function renderLearnBlogGrid() {
 
   const rest = getFilteredBlogs().slice(FEATURED_COUNT);
 
-  grid.innerHTML = rest.slice(0, NumberLoading).map(LearnBlogCardHTML).join("");
+  grid.innerHTML = rest.slice(0, NumberofLoading).map(LearnBlogCardHTML).join("");
 
   const loadMore = document.querySelector(".LoadMoreSection");
   if (loadMore)
-    loadMore.style.display = rest.length > NumberLoading ? "" : "none";
+    loadMore.style.display = rest.length > NumberofLoading ? "" : "none";
 }
 
 function renderBlogsPage() {
   if (!blogsPage) return;
   currentCategory = "all";
-  NumberLoading = PAGE_SIZE;
+  NumberofLoading = PAGE_SIZE;
 
   blogsPage.innerHTML = blogListHTML();
   renderUrl();
@@ -190,7 +190,7 @@ document.addEventListener("click", (e) => {
   const filterBtn = e.target.closest(".filterBlogsBtn");
   if (filterBtn) {
     currentCategory = filterBtn.dataset.category;
-    NumberLoading = PAGE_SIZE;
+    NumberofLoading = PAGE_SIZE;
     buildFilterButtons();
     renderBlogGrid();
     renderLearnBlogGrid();
@@ -199,7 +199,7 @@ document.addEventListener("click", (e) => {
 
   // load more
   if (e.target.id === "LoadMore") {
-    NumberLoading += PAGE_SIZE;
+    NumberofLoading += PAGE_SIZE;
     renderLearnBlogGrid();
     return;
   }

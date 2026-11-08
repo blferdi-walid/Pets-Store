@@ -2721,7 +2721,7 @@ const header = `
           <ul class="Nav-Right-Links-text" >
             <a href="index.html">Home</a>
             <a href="categories.html">Categories</a>
-            <a href="">Blog</a>
+            <a href="blog.html">Blog</a>
             <a href="Contact.html">Contact</a>
           </ul>
           <ul class="Nav-Right-Links-icons" >
