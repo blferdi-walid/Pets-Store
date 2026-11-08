@@ -35,13 +35,13 @@ function blogListHTML() {
 
 function blogCardHTML(item) {
   return `<div class="blogsItem" data-id="${item.id}">
-    <img src="${item.img}" alt="${item.title}">
+    <img src="${item.image}" alt="${item.title}">
     <div class="blogItem_content">
       <h3>${item.title}</h3>
-      <p>${item.description}</p>
+      <p>${item.content}</p>
       <div class="authur">
-        <img src="${item.authorImg}" alt="${item.authorName}">
-        <span>${item.authorName}</span>
+        <img src="${item.authorImg}" alt="${item.author}">
+        <span>${item.author}</span>
       </div>
     </div>
   </div>`;
@@ -49,13 +49,13 @@ function blogCardHTML(item) {
 
 function LearnBlogCardHTML(item) {
   return `<div class="LearnMoreblogsItem" data-id="${item.id}">
-    <img src="${item.img}" alt="${item.title}">
+    <img src="${item.image}" alt="${item.title}">
     <div class="LearnMoreblogsItem_content">
       <h3>${item.title}</h3>
-      <p>${item.description}</p>
+      <p>${item.content}</p>
       <div class="authur">
         <img src="${item.authorImg}" alt="${item.authorName}">
-        <span>${item.authorName}</span>
+        <span>${item.author}</span>
       </div>
     </div>
   </div>`;
@@ -81,7 +81,7 @@ function renderBlogHeader() {
   head.classList.add("CatName_ProductPage");
   head.innerHTML = `
     <div class="CatName_ProductPage_content">
-      <img src="./images/blog.png" alt="Blog">
+      <img src="./images/dogs.png" alt="Blog">
       <h3>Our Blog</h3>
     </div>`;
 
@@ -173,11 +173,11 @@ function renderBlogDetail(id) {
   blogsPage.innerHTML = `
     <p class="UrlCON"></p>
     <article class="blogDetail">
-      <img src="${blog.img}" alt="${blog.title}">
+      <img src="${blog.image}" alt="${blog.title}">
       <h2>${blog.title}</h2>
       <div class="authur">
-        <img src="${blog.authorImg}" alt="${blog.authorName}">
-        <span>${blog.authorName}</span>
+        <img src="${blog.authorImg}" alt="${blog.author}">
+        <span>${blog.author}</span>
       </div>
       <p>${blog.description}</p>
     </article>`;

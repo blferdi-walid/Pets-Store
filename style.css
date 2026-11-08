@@ -2629,10 +2629,12 @@ start shoppin card degin
    ============================================================ */
 
 /* Down to laptops (max 1280px) */
-@media screen and (max-width: 1280px) {
+
+@media screen and (min-width: 1280px) {
   .productPage .productMainContainer {
     height: 500px;
   }
+
 }
 
 /* Down to tablets (max 1024px) */
