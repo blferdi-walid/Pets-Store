@@ -960,6 +960,8 @@ header {
   border: none;
   box-shadow: 3px 2px 8px 3px rgba(0, 0, 0, 0.1);
   padding: 10px;
+    margin-bottom:30px;
+
 }
 .blogsItem:first-child { grid-column: 1 / -1; }
  
