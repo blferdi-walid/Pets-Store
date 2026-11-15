@@ -2579,6 +2579,9 @@ start shoppin card degin
   #blogsPage .learnMoreGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+    .AllCategories{
+        grid-template-columns:  repeat(3 ,1fr);
+  }
 }
 
 @media (max-width: 728px) {
@@ -2619,6 +2622,9 @@ start shoppin card degin
   .orderActions {
     row-gap: 16px;
     margin-top: 32px;
+  }
+  .AllCategories{
+        grid-template-columns:  1fr;
   }
 }
 
